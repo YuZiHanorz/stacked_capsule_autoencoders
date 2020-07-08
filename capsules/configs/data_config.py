@@ -75,8 +75,8 @@ def make_cifar10(config):
             functools.partial(preprocess.pad_and_shift,
                               output_size=config.canvas_size,
                               shift=None))
-        transform.append(
-            functools.partial(preprocess.normalized_sobel_edges))
+    transform.append(
+        functools.partial(preprocess.normalized_sobel_edges))
 
     batch_size = config.batch_size
     res = AttrDict(trainset=image.create('cifar10',
