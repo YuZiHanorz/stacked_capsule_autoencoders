@@ -28,7 +28,7 @@ from stacked_capsule_autoencoders.capsules.models.scae import ImageCapsule
 flags.DEFINE_float('lr', 1e-4, 'Learning rate.')
 flags.DEFINE_boolean('use_lr_schedule', True, 'Uses learning rate schedule'
                      ' if True.')
-
+flags.DEFINE_integer('decay_steps', int(1e4), 'Decay steps.')
 flags.DEFINE_integer('template_size', 11, 'Template size.')
 flags.DEFINE_integer('n_part_caps', 16, 'Number of part capsules.')
 flags.DEFINE_integer('n_part_caps_dims', 6, 'Part caps\' dimensionality.')
@@ -62,6 +62,12 @@ flags.DEFINE_float('posterior_within_example_sparsity_weight', 10.,
                    'Loss weight.')
 flags.DEFINE_float('posterior_between_example_sparsity_weight', 10.,
                    'Loss weight.')
+                   
+flags.DEFINE_integer('n_heads', 1, 'Number of heads for set transformer.')
+flags.DEFINE_integer('n_dims', 16,
+                     'Number of dims of hidden states for set transformer.')
+flags.DEFINE_integer('n_output_dims', 256,
+                     'Number of output dims for set transformer.')
 
 
 def get(config):
@@ -77,11 +83,12 @@ def get(config):
         raise ValueError('Unknown model type: "{}".'.format(config.model))
 
     lr = config.lr
+    decay_steps = config.decay_steps
     if config.use_lr_schedule:
         global_step = tf.train.get_or_create_global_step()
         lr = tf.train.exponential_decay(global_step=global_step,
                                         learning_rate=lr,
-                                        decay_steps=1e4,
+                                        decay_steps=decay_steps,
                                         decay_rate=.96)
 
     eps = 1e-2 / float(config.batch_size)**2
@@ -96,11 +103,18 @@ def make_scae(config):
     img_size = [config.canvas_size] * 2
     template_size = [config.template_size] * 2
 
-    cnn_encoder = snt.nets.ConvNet2D(output_channels=[128] * 4,
-                                     kernel_shapes=[3],
-                                     strides=[2, 2, 1, 1],
-                                     paddings=[snt.VALID],
-                                     activate_final=True)
+    if config.name == 'mnist':
+        cnn_encoder = snt.nets.ConvNet2D(output_channels=[128] * 4,
+                                         kernel_shapes=[3],
+                                         strides=[2, 2, 1, 1],
+                                         paddings=[snt.VALID],
+                                         activate_final=True)
+    elif config.name == 'cifar10':
+        cnn_encoder = snt.nets.ConvNet2D(output_channels=[128] * 4,
+                                         kernel_shapes=[3],
+                                         strides=[1, 1, 2, 2],
+                                         paddings=[snt.VALID],
+                                         activate_final=True)
 
     part_encoder = primary.CapsuleImageEncoder(
         cnn_encoder,
@@ -122,9 +136,9 @@ def make_scae(config):
     )
 
     obj_encoder = SetTransformer(n_layers=3,
-                                 n_heads=1,
-                                 n_dims=16,
-                                 n_output_dims=256,
+                                 n_heads=config.n_heads,
+                                 n_dims=config.n_dims,
+                                 n_output_dims=config.n_output_dims,
                                  n_outputs=config.n_obj_caps,
                                  layer_norm=True,
                                  dropout_rate=0.)
