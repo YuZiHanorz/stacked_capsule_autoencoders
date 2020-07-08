@@ -18,7 +18,7 @@
 set -e
 set -x
 
-export PYTHONPATH=$PYTHONPATH:/work/05470/zwei1/maverick2/CapsnetZhyu
+export PYTHONPATH=$PYTHONPATH:/work/07521/zhyu1214/maverick2/Capsule
 #source stacked_capsule_autoencoders/setup_virtualenv.sh
 python -m stacked_capsule_autoencoders.train\
   --name=mnist\
