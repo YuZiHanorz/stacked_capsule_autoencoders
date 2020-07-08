@@ -36,11 +36,10 @@ python -m stacked_capsule_autoencoders.train\
   --n_obj_caps=64\
   --colorize_templates=True\
   --use_alpha_channel=True\
-  --posterior_between_example_sparsity_weight=0.2\
-  --posterior_within_example_sparsity_weight=0.7\
-  --prior_between_example_sparsity_weight=0.35\
-  --prior_within_example_constant=4.3\
-  --prior_within_example_sparsity_weight=2.\
+  --prior_within_example_sparsity_weight=0.17\
+  --prior_between_example_sparsity_weight=0.1\
+  --posterior_within_example_sparsity_weight=1.39\
+  --posterior_between_example_sparsity_weight=7.32\
   --color_nonlin='sigmoid'\
   --template_nonlin='sigmoid'\
   --n_heads=2\
