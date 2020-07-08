@@ -70,7 +70,7 @@ def make_cifar10(config):
 
     transform = [to_float]
 
-    if config.canvas_size != 28:
+    if config.canvas_size != 32:
         transform.append(
             functools.partial(preprocess.pad_and_shift,
                               output_size=config.canvas_size,
