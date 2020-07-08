@@ -30,9 +30,10 @@ def get(config):
 
     if config.dataset == 'mnist':
         dataset = make_mnist(config)
+    elif config.dataset == 'cifar10':
+        dataset = make_cifar10(config)
     elif config.dataset == 'constellation':
         dataset = make_constellation(config)
-
     return dataset
 
 
@@ -55,6 +56,34 @@ def make_mnist(config):
                                          batch_size=batch_size,
                                          transforms=transform),
                    validset=image.create('mnist',
+                                         subset='test',
+                                         batch_size=batch_size,
+                                         transforms=transform))
+
+    return res
+
+
+def make_cifar10(config):
+    """Creates the CIFAR10 dataset."""
+    def to_float(x):
+        return tf.to_float(x) / 255.
+
+    transform = [to_float]
+
+    if config.canvas_size != 28:
+        transform.append(
+            functools.partial(preprocess.pad_and_shift,
+                              output_size=config.canvas_size,
+                              shift=None))
+        transform.append(
+            functools.partial(preprocess.normalized_sobel_edges))
+
+    batch_size = config.batch_size
+    res = AttrDict(trainset=image.create('cifar10',
+                                         subset='train',
+                                         batch_size=batch_size,
+                                         transforms=transform),
+                   validset=image.create('cifar10',
                                          subset='test',
                                          batch_size=batch_size,
                                          transforms=transform))

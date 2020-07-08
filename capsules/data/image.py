@@ -41,6 +41,8 @@ def create(which,
                          ' supported.'.format(which, SUPPORTED_DATSETS))
 
     dataset = func(subset, batch_size, **kwargs)
+    print("here is image create")
+    print(dataset)
 
     if transforms is not None:
         if not isinstance(transforms, dict):
@@ -74,11 +76,18 @@ def create(which,
     for _, v in input_batch.items():
         v.set_shape([batch_size * n_replicas] + v.shape[1:].as_list())
 
+    print("here is input_batch")
+    print(input_batch)
     return input_batch
 
 
 def _create_mnist(subset, batch_size, **kwargs):
     return tfds.load(name='mnist', split=subset,
+                     **kwargs).repeat().batch(batch_size)
+
+
+def _create_cifar10(subset, batch_size, **kwargs):
+    return tfds.load(name='cifar10', split=subset,
                      **kwargs).repeat().batch(batch_size)
 
 
