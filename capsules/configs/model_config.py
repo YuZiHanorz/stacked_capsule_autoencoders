@@ -62,7 +62,7 @@ flags.DEFINE_float('posterior_within_example_sparsity_weight', 10.,
                    'Loss weight.')
 flags.DEFINE_float('posterior_between_example_sparsity_weight', 10.,
                    'Loss weight.')
-                   
+
 flags.DEFINE_integer('n_heads', 1, 'Number of heads for set transformer.')
 flags.DEFINE_integer('n_dims', 16,
                      'Number of dims of hidden states for set transformer.')
@@ -103,13 +103,13 @@ def make_scae(config):
     img_size = [config.canvas_size] * 2
     template_size = [config.template_size] * 2
 
-    if config.name == 'mnist':
+    if config.dataset == 'mnist':
         cnn_encoder = snt.nets.ConvNet2D(output_channels=[128] * 4,
                                          kernel_shapes=[3],
                                          strides=[2, 2, 1, 1],
                                          paddings=[snt.VALID],
                                          activate_final=True)
-    elif config.name == 'cifar10':
+    elif config.dataset == 'cifar10':
         cnn_encoder = snt.nets.ConvNet2D(output_channels=[128] * 4,
                                          kernel_shapes=[3],
                                          strides=[1, 1, 2, 2],
