@@ -109,7 +109,7 @@ def make_scae(config):
                                          strides=[2, 2, 1, 1],
                                          paddings=[snt.VALID],
                                          activate_final=True)
-    elif config.dataset == 'cifar10':
+    elif config.dataset == 'cifar10' or config.dataset == 'svhn':
         cnn_encoder = snt.nets.ConvNet2D(output_channels=[128] * 4,
                                          kernel_shapes=[3],
                                          strides=[1, 1, 2, 2],
