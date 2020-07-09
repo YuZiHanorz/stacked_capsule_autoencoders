@@ -32,6 +32,8 @@ def get(config):
         dataset = make_mnist(config)
     elif config.dataset == 'cifar10':
         dataset = make_cifar10(config)
+    elif config.dataset == 'svhn':
+        dataset = make_svhn(config)
     elif config.dataset == 'constellation':
         dataset = make_constellation(config)
     return dataset
@@ -84,6 +86,34 @@ def make_cifar10(config):
                                          batch_size=batch_size,
                                          transforms=transform),
                    validset=image.create('cifar10',
+                                         subset='test',
+                                         batch_size=batch_size,
+                                         transforms=transform))
+
+    return res
+
+
+def make_svhn(config):
+    """Creates the svhn dataset."""
+    def to_float(x):
+        return tf.to_float(x) / 255.
+
+    transform = [to_float]
+
+    if config.canvas_size != 32:
+        transform.append(
+            functools.partial(preprocess.pad_and_shift,
+                              output_size=config.canvas_size,
+                              shift=None))
+    transform.append(
+        functools.partial(preprocess.normalized_sobel_edges))
+
+    batch_size = config.batch_size
+    res = AttrDict(trainset=image.create('svhn',
+                                         subset='train',
+                                         batch_size=batch_size,
+                                         transforms=transform),
+                   validset=image.create('svhn',
                                          subset='test',
                                          batch_size=batch_size,
                                          transforms=transform))

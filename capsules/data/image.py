@@ -91,5 +91,10 @@ def _create_cifar10(subset, batch_size, **kwargs):
                      **kwargs).repeat().batch(batch_size)
 
 
+def _create_svhn(subset, batch_size, **kwargs):
+    return tfds.load(name='svhn', split=subset,
+                     **kwargs).repeat().batch(batch_size)
+
+
 SUPPORTED_DATSETS = set(
     k.split('_', 2)[-1] for k in globals().keys() if k.startswith('_create'))
