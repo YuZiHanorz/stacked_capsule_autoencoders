@@ -92,7 +92,7 @@ def _create_cifar10(subset, batch_size, **kwargs):
 
 
 def _create_svhn(subset, batch_size, **kwargs):
-    return tfds.load(name='svhn', split=subset,
+    return tfds.load(name='svhn_cropped', split=subset,
                      **kwargs).repeat().batch(batch_size)
 
 
