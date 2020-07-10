@@ -71,6 +71,16 @@ def create(which,
 
         dataset = dataset.map(map_func)
 
+    def func_NHWC(data):
+        data = dict(data)
+        img = data['image']
+        img = tf.transpose(img, [0, 3, 1, 2])
+        print(img)
+        data['image'] = img
+        return data
+
+    dataset = dataset.map(func_NHWC)
+
     iter_data = dataset.make_one_shot_iterator()
     input_batch = iter_data.get_next()
     for _, v in input_batch.items():
