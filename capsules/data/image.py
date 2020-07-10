@@ -79,7 +79,7 @@ def create(which,
         data['image'] = img
         return data
 
-    dataset = dataset.map(func_NHWC)
+    # dataset = dataset.map(func_NHWC)
 
     iter_data = dataset.make_one_shot_iterator()
     input_batch = iter_data.get_next()
