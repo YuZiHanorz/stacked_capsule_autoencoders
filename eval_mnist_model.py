@@ -85,11 +85,23 @@ def main(_=None):
         saver = tf.train.Saver()
         saver.restore(sess, FLAGS.snapshot)
 
-    valid_results = _collect_results(sess, valid_tensors, validset,
-                                     10000 // FLAGS.batch_size)
+    if config.dataset == 'mnist':
+        valid_results = _collect_results(sess, valid_tensors, validset,
+                                        10000 // FLAGS.batch_size)
+        train_results = _collect_results(sess, train_tensors, trainset,
+                                        60000 // FLAGS.batch_size)
+    elif config.dataset == 'svhn':
+        valid_results = _collect_results(sess, valid_tensors, validset,
+                                        26032 // FLAGS.batch_size)
 
-    train_results = _collect_results(sess, train_tensors, trainset,
-                                     60000 // FLAGS.batch_size)
+        train_results = _collect_results(sess, train_tensors, trainset,
+                                        73257 // FLAGS.batch_size)
+    elif config.dataset == 'cifar10':
+        valid_results = _collect_results(sess, valid_tensors, validset,
+                                        10000 // FLAGS.batch_size)
+
+        train_results = _collect_results(sess, train_tensors, trainset,
+                                        50000 // FLAGS.batch_size)
 
     results = AttrDict(train=train_results, valid=valid_results)
 
