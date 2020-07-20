@@ -68,7 +68,7 @@ flags.DEFINE_integer('n_dims', 16,
                      'Number of dims of hidden states for set transformer.')
 flags.DEFINE_integer('n_output_dims', 256,
                      'Number of output dims for set transformer.')
-flags.DEFINE_integer('prep', 'none', 'Data_prep')
+flags.DEFINE_string('prep', 'none', 'Data_prep')
 
 
 def get(config):
