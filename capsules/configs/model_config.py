@@ -69,6 +69,7 @@ flags.DEFINE_integer('n_dims', 16,
 flags.DEFINE_integer('n_output_dims', 256,
                      'Number of output dims for set transformer.')
 flags.DEFINE_string('prep', 'none', 'Data_prep')
+flags.DEFINE_float('part_ll_weight', 1., 'Loss weight.')
 
 
 def get(config):
@@ -164,7 +165,7 @@ def make_scae(config):
         label_key='label',
         n_classes=10,
         dynamic_l2_weight=10,
-        caps_ll_weight=1.,
+        caps_ll_weight=config.part_ll_weight,
         vote_type='enc',
         pres_type='enc',
         stop_grad_caps_inpt=True,
