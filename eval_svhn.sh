@@ -37,4 +37,5 @@ python -m stacked_capsule_autoencoders.eval_mnist_model\
   --n_heads=2\
   --n_dims=64\
   --n_output_dims=128\
+  --prep='sobel'\
   "$@"
