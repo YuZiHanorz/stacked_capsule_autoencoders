@@ -68,6 +68,7 @@ flags.DEFINE_integer('n_dims', 16,
                      'Number of dims of hidden states for set transformer.')
 flags.DEFINE_integer('n_output_dims', 256,
                      'Number of output dims for set transformer.')
+flags.DEFINE_integer('prep', 'none', 'Data_prep')
 
 
 def get(config):
@@ -178,6 +179,7 @@ def make_scae(config):
         posterior_within_example_sparsity_weight,  # pylint:disable=line-too-long
         posterior_between_example_sparsity_weight=config.
         posterior_between_example_sparsity_weight,  # pylint:disable=line-too-long
+        prep=config.prep
     )
 
     return model

@@ -45,4 +45,5 @@ python -m stacked_capsule_autoencoders.train\
   --n_heads=2\
   --n_dims=64\
   --n_output_dims=128\
+  --prep='sobel'\
   "$@"
