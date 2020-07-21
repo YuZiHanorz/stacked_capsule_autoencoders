@@ -40,8 +40,6 @@ python -m stacked_capsule_autoencoders.train\
   --prior_between_example_sparsity_weight=0.1\
   --posterior_within_example_sparsity_weight=1.39\
   --posterior_between_example_sparsity_weight=7.32\
-  --color_nonlin='sigmoid'\
-  --template_nonlin='sigmoid'\
   --n_heads=2\
   --n_dims=64\
   --n_output_dims=128\
