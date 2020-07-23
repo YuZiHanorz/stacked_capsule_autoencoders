@@ -85,13 +85,16 @@ def collect_results(sess, tensors, n_batches):
     for i in range(n_batches):
         print('\rCollecting: {}/{}'.format(i + 1, n_batches), end='')
 
-        print('')
-        vals = sess.run(tensors, options=run_options, run_metadata=run_metadata)
-        tl = timeline.Timeline(run_metadata.step_stats)
-        ctf = tl.generate_chrome_trace_format()
-        with open('timeline.json', 'w') as f:
-            f.write(ctf)
-        print('')
+        if i == 10:
+            print('')
+            vals = sess.run(tensors, options=run_options, run_metadata=run_metadata)
+            tl = timeline.Timeline(run_metadata.step_stats)
+            ctf = tl.generate_chrome_trace_format()
+            with open('timeline.json', 'w') as f:
+                f.write(ctf)
+            print('')
+        else:
+            vals = sess.run(tensors)
 
         for k, v in vals.items():
             res[k].append(v)
