@@ -132,8 +132,8 @@ def main(_=None):
     checkpoint_folder = osp.dirname(FLAGS.snapshot)
     figure_filename = osp.join(checkpoint_folder, FLAGS.tsne_figure_name)
     print('Savign TSNE plot at "{}"'.format(figure_filename))
-    make_tsne_plot(valid_results.posterior_pres, valid_results.label,
-                   figure_filename)
+    #make_tsne_plot(valid_results.posterior_pres, valid_results.label,
+    #              figure_filename)
 
 
 if __name__ == '__main__':
