@@ -20,7 +20,7 @@ export PYTHONPATH=$PYTHONPATH:/work/07521/zhyu1214/maverick2/Capsule
 #source stacked_capsule_autoencoders/setup_virtualenv.sh
 python -m stacked_capsule_autoencoders.eval_mnist_model\
   --snapshot=stacked_capsule_autoencoders/checkpoints/mnist/model.ckpt-300001\
-  --batch_size=100\
+  --batch_size=200\
   --canvas_size=40\
   --n_part_caps=40\
   --n_obj_caps=32\

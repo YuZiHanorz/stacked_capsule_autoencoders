@@ -21,6 +21,7 @@ export PYTHONPATH=$PYTHONPATH:/work/07521/zhyu1214/maverick2/Capsule
 python -m stacked_capsule_autoencoders.eval_mnist_model\
   --dataset=cifar10\
   --snapshot=stacked_capsule_autoencoders/checkpoints/cifar10/model.ckpt-300001\
+  --batch_size=300\
   --canvas_size=32\
   --template_size=14\
   --n_part_caps=32\
@@ -32,8 +33,6 @@ python -m stacked_capsule_autoencoders.eval_mnist_model\
   --prior_between_example_sparsity_weight=0.1\
   --posterior_within_example_sparsity_weight=1.39\
   --posterior_between_example_sparsity_weight=7.32\
-  --color_nonlin='sigmoid'\
-  --template_nonlin='sigmoid'\
   --n_heads=2\
   --n_dims=64\
   --n_output_dims=128\
