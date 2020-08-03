@@ -183,6 +183,9 @@ class CapsuleLayer(snt.AbstractModule):
     cpr = self._make_transform(cpr_dynamic + cpr_static)
 
     ccr_per_vote = snt.TileByDim([2], [self._n_votes])(ccr)
+    print(ccr_per_vote.shape)
+    print(cpr.shape)
+    print('here here here')
     votes = tf.matmul(ccr_per_vote, cpr)
 
     if parent_presence is not None:
