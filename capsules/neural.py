@@ -116,6 +116,8 @@ class BatchMLP(snt.AbstractModule):
   def _build(self, x):
 
     h = x
+    print('loop')
+    print(self._n_hiddens[:-1])
     for n_hidden in self._n_hiddens[:-1]:
       layer = BatchLinear(n_hidden, initializers=self._initializers,
                           use_bias=True)
