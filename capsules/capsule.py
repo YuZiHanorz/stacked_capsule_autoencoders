@@ -112,8 +112,10 @@ class CapsuleLayer(snt.AbstractModule):
             print('mlp1')
             print(features.shape)
             raw_caps_params = mlp(features)
+            print(raw_caps_params.shape)
             caps_params = tf.reshape(raw_caps_params,
                                      batch_shape + [self._n_caps_params])
+            print(caps_params.shape)
 
         else:
             assert features.shape[:2].as_list() == batch_shape
@@ -155,13 +157,15 @@ class CapsuleLayer(snt.AbstractModule):
         # add bias to all remaining outputs
         res = [snt.AddBias()(i) for i in res[1:]]
         ccr, pres_logit_per_caps, pres_logit_per_vote, scale_per_vote = res
-
+        print(ccr.shape)
         if self._caps_dropout_rate != 0.0:
             pres_logit_per_caps += math_ops.safe_log(caps_exist)
 
         cpr_static = tf.get_variable(
             'cpr_static',
             shape=[1, self._n_caps, self._n_votes, self._n_transform_params])
+        print(cpr_dynamic.shape)
+        print(cpr_static.shape)
 
         def add_noise(tensor):
             """Adds noise to tensors."""
@@ -193,12 +197,15 @@ class CapsuleLayer(snt.AbstractModule):
 
         if not self._deformations:
             cpr_dynamic = tf.zeros_like(cpr_dynamic)
-
+        
         cpr = self._make_transform(cpr_dynamic + cpr_static)
 
         ccr_per_vote = snt.TileByDim([2], [self._n_votes])(ccr)
         print('start matmul')
+        print(ccr.shape)
         print(ccr_per_vote.shape)
+        print(cpr_dynamic.shape)
+        print(cpr_static.shape)
         print(cpr.shape)
         print('end matmul')
         votes = tf.matmul(ccr_per_vote, cpr)
