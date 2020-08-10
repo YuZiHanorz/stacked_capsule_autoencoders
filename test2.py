@@ -1,5 +1,28 @@
 import tensorflow as tf
+from tensorflow.python.client import timeline
+
+x = tf.random.normal([200, 32, 40, 3, 3])
+y = tf.random.normal([200, 32, 40, 3, 3])
+with tf.device('/gpu:0'):
+    res = tf.matmul(x, y)
+
+# Run the graph with full trace option
+with tf.Session() as sess:
+    run_options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE)
+    run_metadata = tf.RunMetadata()
+    sess.run(res, options=run_options, run_metadata=run_metadata)
+
+    # Create the Timeline object, and write it to a json
+    tl = timeline.Timeline(run_metadata.step_stats)
+    ctf = tl.generate_chrome_trace_format()
+    with open('timeline_hahaha.json', 'w') as f:
+        f.write(ctf)
+
+
+'''
+import tensorflow as tf
 import timeit
+
 
 with tf.device('/gpu:0'):
     mlp1_a = tf.random.normal([200, 32, 1, 256])
@@ -58,3 +81,4 @@ mlp2_l1_time = timeit.timeit(mlp2_l1_run, number=128)
 mlp2_l2_time = timeit.timeit(mlp2_l2_run, number=1)
 matmul_time = timeit.timeit(matmul_run, number=1)
 print('run_time:', mlp1_l1_time, mlp1_l2_time, mlp2_l1_time, mlp2_l2_time, matmul_time)
+'''
