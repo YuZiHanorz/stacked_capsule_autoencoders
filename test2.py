@@ -1,9 +1,9 @@
 import tensorflow as tf
 from tensorflow.python.client import timeline
 
-x = tf.random.normal([200, 32, 40, 3, 3])
-y = tf.random.normal([200, 32, 40, 3, 3])
 with tf.device('/gpu:0'):
+    x = tf.random.normal([200, 32, 40, 3, 3])
+    y = tf.random.normal([200, 32, 40, 3, 3])
     res = tf.matmul(x, y)
 
 # Run the graph with full trace option
