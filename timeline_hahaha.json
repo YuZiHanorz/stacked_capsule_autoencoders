@@ -13,7 +13,7 @@
             "ph": "M",
             "pid": 1,
             "args": {
-                "name": "/gpu:0 (GeForce GTX 1080 Ti)/context#0/stream#1:MemcpyDtoH Compute"
+                "name": "/gpu:0 (GeForce GTX 1080 Ti)/context#0/stream#2:MemcpyDtoH Compute"
             }
         },
         {
@@ -21,7 +21,7 @@
             "ph": "M",
             "pid": 2,
             "args": {
-                "name": "/gpu:0 (GeForce GTX 1080 Ti)/context#0/stream#1:MemcpyDtoH Tensors"
+                "name": "/gpu:0 (GeForce GTX 1080 Ti)/context#0/stream#2:MemcpyDtoH Tensors"
             }
         },
         {
@@ -29,7 +29,7 @@
             "ph": "M",
             "pid": 3,
             "args": {
-                "name": "/device:GPU:0/stream:all Compute"
+                "name": "/gpu:0 (GeForce GTX 1080 Ti)/context#0/null stream:MemcpyHtoD Compute"
             }
         },
         {
@@ -37,7 +37,7 @@
             "ph": "M",
             "pid": 4,
             "args": {
-                "name": "/device:GPU:0/stream:all Tensors"
+                "name": "/gpu:0 (GeForce GTX 1080 Ti)/context#0/null stream:MemcpyHtoD Tensors"
             }
         },
         {
@@ -45,7 +45,7 @@
             "ph": "M",
             "pid": 5,
             "args": {
-                "name": "/host:CPU Compute"
+                "name": "/device:GPU:0/stream:all Compute"
             }
         },
         {
@@ -53,7 +53,7 @@
             "ph": "M",
             "pid": 6,
             "args": {
-                "name": "/host:CPU Tensors"
+                "name": "/device:GPU:0/stream:all Tensors"
             }
         },
         {
@@ -61,7 +61,7 @@
             "ph": "M",
             "pid": 7,
             "args": {
-                "name": "/job:localhost/replica:0/task:0/device:GPU:0 Compute"
+                "name": "/gpu:0 (GeForce GTX 1080 Ti)/context#0/stream#1 Compute"
             }
         },
         {
@@ -69,7 +69,7 @@
             "ph": "M",
             "pid": 8,
             "args": {
-                "name": "/job:localhost/replica:0/task:0/device:GPU:0 Tensors"
+                "name": "/gpu:0 (GeForce GTX 1080 Ti)/context#0/stream#1 Tensors"
             }
         },
         {
@@ -77,13 +77,45 @@
             "ph": "M",
             "pid": 9,
             "args": {
-                "name": "/job:localhost/replica:0/task:0/device:CPU:0 Compute"
+                "name": "/host:CPU Compute"
             }
         },
         {
             "name": "process_name",
             "ph": "M",
             "pid": 10,
+            "args": {
+                "name": "/host:CPU Tensors"
+            }
+        },
+        {
+            "name": "process_name",
+            "ph": "M",
+            "pid": 11,
+            "args": {
+                "name": "/job:localhost/replica:0/task:0/device:GPU:0 Compute"
+            }
+        },
+        {
+            "name": "process_name",
+            "ph": "M",
+            "pid": 12,
+            "args": {
+                "name": "/job:localhost/replica:0/task:0/device:GPU:0 Tensors"
+            }
+        },
+        {
+            "name": "process_name",
+            "ph": "M",
+            "pid": 13,
+            "args": {
+                "name": "/job:localhost/replica:0/task:0/device:CPU:0 Compute"
+            }
+        },
+        {
+            "name": "process_name",
+            "ph": "M",
+            "pid": 14,
             "args": {
                 "name": "/job:localhost/replica:0/task:0/device:CPU:0 Tensors"
             }
@@ -94,21 +126,164 @@
             "name": "unknown",
             "pid": 1,
             "tid": 0,
-            "ts": 1597038273931003,
-            "dur": 726,
+            "ts": 1597039108555859,
+            "dur": 708,
             "args": {
-                "name": "MatMul/_0:_Send#id=1,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#::edge_5_MatMul@@MemcpyDtoH",
+                "name": "MatMul/_0:_Send#id=1,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#::edge_9_MatMul@@MemcpyDtoH",
                 "op": "unknown"
             }
         },
         {
             "ph": "X",
             "cat": "Op",
-            "name": "_Send#id=1,device=/job",
+            "name": "unknown",
             "pid": 3,
             "tid": 0,
-            "ts": 1597038273931003,
-            "dur": 726,
+            "ts": 1597039108534845,
+            "dur": 56,
+            "args": {
+                "name": "MatMul:BatchMatMulV2#id=1,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "RandomStandardNormal#id=1,device=/job",
+            "pid": 5,
+            "tid": 0,
+            "ts": 1597039108238892,
+            "dur": 88,
+            "args": {
+                "name": "random_normal_1/RandomStandardNormal",
+                "op": "RandomStandardNormal#id=1,device=/job"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "RandomStandardNormal#id=1,device=/job",
+            "pid": 5,
+            "tid": 0,
+            "ts": 1597039108239012,
+            "dur": 52,
+            "args": {
+                "name": "random_normal/RandomStandardNormal",
+                "op": "RandomStandardNormal#id=1,device=/job"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BatchMatMulV2#id=1,device=/job",
+            "pid": 5,
+            "tid": 0,
+            "ts": 1597039108542694,
+            "dur": 3393,
+            "args": {
+                "name": "MatMul",
+                "op": "BatchMatMulV2#id=1,device=/job"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BatchMatMulV2#id=1,device=/job",
+            "pid": 5,
+            "tid": 0,
+            "ts": 1597039108546088,
+            "dur": 3357,
+            "args": {
+                "name": "MatMul",
+                "op": "BatchMatMulV2#id=1,device=/job"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BatchMatMulV2#id=1,device=/job",
+            "pid": 5,
+            "tid": 0,
+            "ts": 1597039108549446,
+            "dur": 3362,
+            "args": {
+                "name": "MatMul",
+                "op": "BatchMatMulV2#id=1,device=/job"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BatchMatMulV2#id=1,device=/job",
+            "pid": 5,
+            "tid": 1,
+            "ts": 1597039108552808,
+            "dur": 3049,
+            "args": {
+                "name": "MatMul",
+                "op": "BatchMatMulV2#id=1,device=/job"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BatchMatMulV2#id=1,device=/job",
+            "pid": 5,
+            "tid": 2,
+            "ts": 1597039108534845,
+            "dur": 56,
+            "args": {
+                "name": "MatMul",
+                "op": "BatchMatMulV2#id=1,device=/job"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BatchMatMulV2#id=1,device=/job",
+            "pid": 5,
+            "tid": 2,
+            "ts": 1597039108541990,
+            "dur": 294,
+            "args": {
+                "name": "MatMul",
+                "op": "BatchMatMulV2#id=1,device=/job"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BatchMatMulV2#id=1,device=/job",
+            "pid": 5,
+            "tid": 2,
+            "ts": 1597039108542286,
+            "dur": 195,
+            "args": {
+                "name": "MatMul",
+                "op": "BatchMatMulV2#id=1,device=/job"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BatchMatMulV2#id=1,device=/job",
+            "pid": 5,
+            "tid": 2,
+            "ts": 1597039108542483,
+            "dur": 195,
+            "args": {
+                "name": "MatMul",
+                "op": "BatchMatMulV2#id=1,device=/job"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_Send#id=1,device=/job",
+            "pid": 5,
+            "tid": 0,
+            "ts": 1597039108555859,
+            "dur": 708,
             "args": {
                 "name": "MatMul/_0",
                 "op": "_Send#id=1,device=/job"
@@ -118,10 +293,127 @@
             "ph": "X",
             "cat": "Op",
             "name": "unknown",
-            "pid": 5,
+            "pid": 7,
             "tid": 0,
-            "ts": 1597038273929471,
-            "dur": 87,
+            "ts": 1597039108238892,
+            "dur": 88,
+            "args": {
+                "name": "random_normal_1/RandomStandardNormal:RandomStandardNormal#id=1,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void tensorflow::functor::FillPhiloxRandomKernelLaunch<tensorflow::random::NormalDistribution<tensorflow::random::PhiloxRandom, float> >(tensorflow::random::PhiloxRandom, tensorflow::random::NormalDistribution<tensorflow::random::PhiloxRandom, float>::ResultElementType*, long long, tensorflow::random::NormalDistribution<tensorflow::random::PhiloxRandom, float>)",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 7,
+            "tid": 0,
+            "ts": 1597039108239012,
+            "dur": 52,
+            "args": {
+                "name": "random_normal/RandomStandardNormal:RandomStandardNormal#id=1,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void tensorflow::functor::FillPhiloxRandomKernelLaunch<tensorflow::random::NormalDistribution<tensorflow::random::PhiloxRandom, float> >(tensorflow::random::PhiloxRandom, tensorflow::random::NormalDistribution<tensorflow::random::PhiloxRandom, float>::ResultElementType*, long long, tensorflow::random::NormalDistribution<tensorflow::random::PhiloxRandom, float>)",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 7,
+            "tid": 0,
+            "ts": 1597039108542694,
+            "dur": 3393,
+            "args": {
+                "name": "MatMul:BatchMatMulV2#id=1,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@maxwell_sgemm_128x64_nn",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 7,
+            "tid": 0,
+            "ts": 1597039108546088,
+            "dur": 3357,
+            "args": {
+                "name": "MatMul:BatchMatMulV2#id=1,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@maxwell_sgemm_128x64_nn",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 7,
+            "tid": 0,
+            "ts": 1597039108549446,
+            "dur": 3362,
+            "args": {
+                "name": "MatMul:BatchMatMulV2#id=1,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@maxwell_sgemm_128x64_nn",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 7,
+            "tid": 1,
+            "ts": 1597039108552808,
+            "dur": 3049,
+            "args": {
+                "name": "MatMul:BatchMatMulV2#id=1,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@maxwell_sgemm_128x64_nn",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 7,
+            "tid": 2,
+            "ts": 1597039108541990,
+            "dur": 294,
+            "args": {
+                "name": "MatMul:BatchMatMulV2#id=1,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 7,
+            "tid": 2,
+            "ts": 1597039108542286,
+            "dur": 195,
+            "args": {
+                "name": "MatMul:BatchMatMulV2#id=1,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 7,
+            "tid": 2,
+            "ts": 1597039108542483,
+            "dur": 195,
+            "args": {
+                "name": "MatMul:BatchMatMulV2#id=1,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 9,
+            "tid": 0,
+            "ts": 1597039107399355,
+            "dur": 48,
             "args": {
                 "name": "MatMul/_1:_Recv",
                 "op": "unknown"
@@ -131,10 +423,10 @@
             "ph": "X",
             "cat": "Op",
             "name": "NoOp",
-            "pid": 7,
+            "pid": 11,
             "tid": 0,
-            "ts": 1597038273929346,
-            "dur": 1529,
+            "ts": 1597039107399283,
+            "dur": 102157,
             "args": {
                 "name": "_SOURCE",
                 "op": "NoOp"
@@ -144,23 +436,66 @@
             "ph": "X",
             "cat": "Op",
             "name": "Const",
-            "pid": 7,
+            "pid": 11,
             "tid": 0,
-            "ts": 1597038273930882,
-            "dur": 20,
+            "ts": 1597039107501455,
+            "dur": 21,
             "args": {
-                "name": "MatMul",
+                "name": "random_normal/shape",
                 "op": "Const"
             }
         },
         {
             "ph": "X",
             "cat": "Op",
-            "name": "NoOp",
-            "pid": 9,
+            "name": "RandomStandardNormal",
+            "pid": 11,
             "tid": 0,
-            "ts": 1597038273929354,
-            "dur": 88,
+            "ts": 1597039107501479,
+            "dur": 737468,
+            "args": {
+                "name": "random_normal_1/RandomStandardNormal",
+                "op": "RandomStandardNormal",
+                "input0": "random_normal/shape"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "RandomStandardNormal",
+            "pid": 11,
+            "tid": 0,
+            "ts": 1597039108238962,
+            "dur": 50,
+            "args": {
+                "name": "random_normal/RandomStandardNormal",
+                "op": "RandomStandardNormal",
+                "input0": "random_normal/shape"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BatchMatMulV2",
+            "pid": 11,
+            "tid": 0,
+            "ts": 1597039108239019,
+            "dur": 303804,
+            "args": {
+                "name": "MatMul",
+                "op": "BatchMatMulV2",
+                "input0": "random_normal/RandomStandardNormal",
+                "input1": "random_normal_1/RandomStandardNormal"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "NoOp",
+            "pid": 13,
+            "tid": 0,
+            "ts": 1597039107399278,
+            "dur": 57,
             "args": {
                 "name": "_SOURCE",
                 "op": "NoOp"
@@ -170,10 +505,10 @@
             "ph": "X",
             "cat": "Op",
             "name": "_Retval",
-            "pid": 9,
+            "pid": 13,
             "tid": 0,
-            "ts": 1597038273931791,
-            "dur": 28,
+            "ts": 1597039108557309,
+            "dur": 26,
             "args": {
                 "name": "_retval_MatMul_0_0",
                 "op": "_Retval",
@@ -184,18 +519,18 @@
             "ph": "s",
             "cat": "DataFlow",
             "name": "MatMul",
-            "pid": 7,
+            "pid": 11,
             "tid": 0,
-            "ts": 1597038273930902,
+            "ts": 1597039108542823,
             "id": 0
         },
         {
             "ph": "t",
             "cat": "DataFlow",
             "name": "MatMul",
-            "pid": 9,
+            "pid": 13,
             "tid": 0,
-            "ts": 1597038273931791,
+            "ts": 1597039108557309,
             "id": 0
         }
     ]
