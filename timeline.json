@@ -110,7 +110,7 @@
             "name": "unknown",
             "pid": 1,
             "tid": 0,
-            "ts": 1596819246813646,
+            "ts": 1596941878648806,
             "dur": 704,
             "args": {
                 "name": "model_test/MatMul/_0:_Send#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#::edge_190_model_test/MatMul@@MemcpyDtoH",
@@ -123,8 +123,21 @@
             "name": "Tile#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246794274,
-            "dur": 1097,
+            "ts": 1596941878615781,
+            "dur": 3521,
+            "args": {
+                "name": "model_test/batch_mlp_1/batch_linear_1/tile_by_dim/Tile",
+                "op": "Tile#id=13,device=/job"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Tile#id=13,device=/job",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1596941878619305,
+            "dur": 129,
             "args": {
                 "name": "model_test/batch_mlp_1/batch_linear/tile_by_dim/Tile",
                 "op": "Tile#id=13,device=/job"
@@ -136,21 +149,8 @@
             "name": "Tile#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246795373,
-            "dur": 135,
-            "args": {
-                "name": "model_test/batch_mlp/batch_linear_1/tile_by_dim/Tile",
-                "op": "Tile#id=13,device=/job"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "Tile#id=13,device=/job",
-            "pid": 3,
-            "tid": 0,
-            "ts": 1596819246795510,
-            "dur": 1682,
+            "ts": 1596941878619436,
+            "dur": 1683,
             "args": {
                 "name": "model_test/batch_mlp/batch_linear/tile_by_dim/Tile",
                 "op": "Tile#id=13,device=/job"
@@ -162,10 +162,10 @@
             "name": "Tile#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246797194,
-            "dur": 2127,
+            "ts": 1596941878621121,
+            "dur": 132,
             "args": {
-                "name": "model_test/batch_mlp_1/batch_linear_1/tile_by_dim/Tile",
+                "name": "model_test/batch_mlp/batch_linear_1/tile_by_dim/Tile",
                 "op": "Tile#id=13,device=/job"
             }
         },
@@ -175,8 +175,8 @@
             "name": "BatchMatMulV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246799355,
-            "dur": 985,
+            "ts": 1596941878621285,
+            "dur": 984,
             "args": {
                 "name": "model_test/batch_mlp/batch_linear/MatMul",
                 "op": "BatchMatMulV2#id=13,device=/job"
@@ -188,8 +188,8 @@
             "name": "AddV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246800341,
-            "dur": 12,
+            "ts": 1596941878630619,
+            "dur": 44,
             "args": {
                 "name": "model_test/batch_mlp/batch_linear/add/add",
                 "op": "AddV2#id=13,device=/job"
@@ -201,8 +201,8 @@
             "name": "Relu#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246800355,
-            "dur": 8,
+            "ts": 1596941878630699,
+            "dur": 25,
             "args": {
                 "name": "model_test/batch_mlp/Relu",
                 "op": "Relu#id=13,device=/job"
@@ -214,8 +214,8 @@
             "name": "BatchMatMulV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246800397,
-            "dur": 137,
+            "ts": 1596941878631287,
+            "dur": 143,
             "args": {
                 "name": "model_test/batch_mlp/batch_linear_1/MatMul",
                 "op": "BatchMatMulV2#id=13,device=/job"
@@ -227,7 +227,7 @@
             "name": "AddV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246800536,
+            "ts": 1596941878631431,
             "dur": 6,
             "args": {
                 "name": "model_test/batch_mlp/batch_linear_1/add/add",
@@ -240,8 +240,8 @@
             "name": "ConcatV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246800544,
-            "dur": 6,
+            "ts": 1596941878631440,
+            "dur": 5,
             "args": {
                 "name": "model_test/concat",
                 "op": "ConcatV2#id=13,device=/job"
@@ -253,7 +253,7 @@
             "name": "ConcatV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246800552,
+            "ts": 1596941878631447,
             "dur": 6,
             "args": {
                 "name": "model_test/concat",
@@ -266,8 +266,8 @@
             "name": "BatchMatMulV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246800591,
-            "dur": 234,
+            "ts": 1596941878631631,
+            "dur": 238,
             "args": {
                 "name": "model_test/batch_mlp_1/batch_linear/MatMul",
                 "op": "BatchMatMulV2#id=13,device=/job"
@@ -279,7 +279,7 @@
             "name": "AddV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246800827,
+            "ts": 1596941878631871,
             "dur": 11,
             "args": {
                 "name": "model_test/batch_mlp_1/batch_linear/add/add",
@@ -292,7 +292,7 @@
             "name": "Relu#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246800840,
+            "ts": 1596941878631884,
             "dur": 7,
             "args": {
                 "name": "model_test/batch_mlp_1/Relu",
@@ -305,8 +305,8 @@
             "name": "BatchMatMulV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246800880,
-            "dur": 1280,
+            "ts": 1596941878631930,
+            "dur": 1289,
             "args": {
                 "name": "model_test/batch_mlp_1/batch_linear_1/MatMul",
                 "op": "BatchMatMulV2#id=13,device=/job"
@@ -318,7 +318,7 @@
             "name": "SplitV#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802162,
+            "ts": 1596941878633220,
             "dur": 18,
             "args": {
                 "name": "model_test/split",
@@ -331,7 +331,7 @@
             "name": "SplitV#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802182,
+            "ts": 1596941878633240,
             "dur": 6,
             "args": {
                 "name": "model_test/split",
@@ -344,7 +344,20 @@
             "name": "SplitV#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802190,
+            "ts": 1596941878633248,
+            "dur": 5,
+            "args": {
+                "name": "model_test/split",
+                "op": "SplitV#id=13,device=/job"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "SplitV#id=13,device=/job",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1596941878633256,
             "dur": 6,
             "args": {
                 "name": "model_test/split",
@@ -357,20 +370,7 @@
             "name": "SplitV#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802197,
-            "dur": 7,
-            "args": {
-                "name": "model_test/split",
-                "op": "SplitV#id=13,device=/job"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "SplitV#id=13,device=/job",
-            "pid": 3,
-            "tid": 0,
-            "ts": 1596819246802206,
+            "ts": 1596941878633264,
             "dur": 7,
             "args": {
                 "name": "model_test/split",
@@ -383,7 +383,7 @@
             "name": "AddV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802216,
+            "ts": 1596941878633273,
             "dur": 20,
             "args": {
                 "name": "model_test/add_5",
@@ -396,7 +396,7 @@
             "name": "Split#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802238,
+            "ts": 1596941878633295,
             "dur": 10,
             "args": {
                 "name": "model_test/split_1",
@@ -409,8 +409,8 @@
             "name": "Split#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802250,
-            "dur": 36,
+            "ts": 1596941878633307,
+            "dur": 35,
             "args": {
                 "name": "model_test/split_2",
                 "op": "Split#id=13,device=/job"
@@ -422,7 +422,7 @@
             "name": "Sigmoid#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802288,
+            "ts": 1596941878633344,
             "dur": 6,
             "args": {
                 "name": "model_test/Sigmoid",
@@ -435,7 +435,7 @@
             "name": "Sigmoid#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802296,
+            "ts": 1596941878633353,
             "dur": 6,
             "args": {
                 "name": "model_test/Sigmoid_1",
@@ -448,7 +448,7 @@
             "name": "Mul#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802304,
+            "ts": 1596941878633361,
             "dur": 5,
             "args": {
                 "name": "model_test/mul_3",
@@ -461,7 +461,7 @@
             "name": "Mul#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802311,
+            "ts": 1596941878633368,
             "dur": 5,
             "args": {
                 "name": "model_test/mul_2",
@@ -474,7 +474,7 @@
             "name": "Mul#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802319,
+            "ts": 1596941878633375,
             "dur": 5,
             "args": {
                 "name": "model_test/mul",
@@ -487,7 +487,7 @@
             "name": "Mul#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802325,
+            "ts": 1596941878633381,
             "dur": 5,
             "args": {
                 "name": "model_test/mul_1",
@@ -500,7 +500,7 @@
             "name": "Sigmoid#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802332,
+            "ts": 1596941878633388,
             "dur": 7,
             "args": {
                 "name": "model_test/Sigmoid_2",
@@ -513,7 +513,7 @@
             "name": "Sigmoid#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802341,
+            "ts": 1596941878633397,
             "dur": 7,
             "args": {
                 "name": "model_test/Sigmoid_3",
@@ -526,7 +526,7 @@
             "name": "Mul#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802350,
+            "ts": 1596941878633405,
             "dur": 6,
             "args": {
                 "name": "model_test/mul_15",
@@ -539,8 +539,8 @@
             "name": "Mul#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802358,
-            "dur": 6,
+            "ts": 1596941878633413,
+            "dur": 7,
             "args": {
                 "name": "model_test/mul_14",
                 "op": "Mul#id=13,device=/job"
@@ -552,8 +552,8 @@
             "name": "Mul#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802367,
-            "dur": 7,
+            "ts": 1596941878633422,
+            "dur": 6,
             "args": {
                 "name": "model_test/mul_12",
                 "op": "Mul#id=13,device=/job"
@@ -565,7 +565,7 @@
             "name": "Mul#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802376,
+            "ts": 1596941878633430,
             "dur": 7,
             "args": {
                 "name": "model_test/mul_13",
@@ -578,7 +578,7 @@
             "name": "AddV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802384,
+            "ts": 1596941878633439,
             "dur": 5,
             "args": {
                 "name": "model_test/add",
@@ -591,7 +591,7 @@
             "name": "AddV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802391,
+            "ts": 1596941878633446,
             "dur": 5,
             "args": {
                 "name": "model_test/add_1",
@@ -604,7 +604,7 @@
             "name": "Cos#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802398,
+            "ts": 1596941878633453,
             "dur": 5,
             "args": {
                 "name": "model_test/Cos",
@@ -617,7 +617,7 @@
             "name": "Sin#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802405,
+            "ts": 1596941878633460,
             "dur": 5,
             "args": {
                 "name": "model_test/Sin",
@@ -630,7 +630,7 @@
             "name": "Tanh#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802412,
+            "ts": 1596941878633467,
             "dur": 5,
             "args": {
                 "name": "model_test/Tanh_2",
@@ -643,7 +643,7 @@
             "name": "Tanh#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802419,
+            "ts": 1596941878633474,
             "dur": 4,
             "args": {
                 "name": "model_test/Tanh",
@@ -656,7 +656,7 @@
             "name": "Tanh#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802425,
+            "ts": 1596941878633480,
             "dur": 4,
             "args": {
                 "name": "model_test/Tanh_1",
@@ -669,7 +669,7 @@
             "name": "AddV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802432,
+            "ts": 1596941878633486,
             "dur": 6,
             "args": {
                 "name": "model_test/add_6",
@@ -682,7 +682,7 @@
             "name": "AddV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802440,
+            "ts": 1596941878633494,
             "dur": 6,
             "args": {
                 "name": "model_test/add_7",
@@ -695,7 +695,7 @@
             "name": "Cos#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802447,
+            "ts": 1596941878633502,
             "dur": 6,
             "args": {
                 "name": "model_test/Cos_1",
@@ -708,7 +708,7 @@
             "name": "Sin#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802455,
+            "ts": 1596941878633510,
             "dur": 6,
             "args": {
                 "name": "model_test/Sin_1",
@@ -721,7 +721,7 @@
             "name": "Tanh#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802463,
+            "ts": 1596941878633518,
             "dur": 7,
             "args": {
                 "name": "model_test/Tanh_5",
@@ -734,8 +734,8 @@
             "name": "Tanh#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802472,
-            "dur": 8,
+            "ts": 1596941878633527,
+            "dur": 7,
             "args": {
                 "name": "model_test/Tanh_3",
                 "op": "Tanh#id=13,device=/job"
@@ -747,7 +747,7 @@
             "name": "Tanh#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802482,
+            "ts": 1596941878633536,
             "dur": 7,
             "args": {
                 "name": "model_test/Tanh_4",
@@ -760,7 +760,7 @@
             "name": "Neg#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802491,
+            "ts": 1596941878633545,
             "dur": 5,
             "args": {
                 "name": "model_test/Neg",
@@ -773,8 +773,8 @@
             "name": "Mul#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802498,
-            "dur": 6,
+            "ts": 1596941878633552,
+            "dur": 5,
             "args": {
                 "name": "model_test/mul_4",
                 "op": "Mul#id=13,device=/job"
@@ -786,7 +786,7 @@
             "name": "Mul#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802506,
+            "ts": 1596941878633560,
             "dur": 5,
             "args": {
                 "name": "model_test/mul_11",
@@ -799,7 +799,7 @@
             "name": "Mul#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802513,
+            "ts": 1596941878633567,
             "dur": 5,
             "args": {
                 "name": "model_test/mul_10",
@@ -812,7 +812,7 @@
             "name": "Mul#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802520,
+            "ts": 1596941878633573,
             "dur": 5,
             "args": {
                 "name": "model_test/mul_5",
@@ -825,8 +825,8 @@
             "name": "Neg#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802527,
-            "dur": 7,
+            "ts": 1596941878633581,
+            "dur": 6,
             "args": {
                 "name": "model_test/Neg_1",
                 "op": "Neg#id=13,device=/job"
@@ -838,7 +838,7 @@
             "name": "Mul#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802536,
+            "ts": 1596941878633589,
             "dur": 7,
             "args": {
                 "name": "model_test/mul_16",
@@ -851,7 +851,7 @@
             "name": "Mul#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802544,
+            "ts": 1596941878633598,
             "dur": 7,
             "args": {
                 "name": "model_test/mul_23",
@@ -864,7 +864,7 @@
             "name": "Mul#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802553,
+            "ts": 1596941878633606,
             "dur": 7,
             "args": {
                 "name": "model_test/mul_22",
@@ -877,7 +877,7 @@
             "name": "Mul#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802562,
+            "ts": 1596941878633615,
             "dur": 7,
             "args": {
                 "name": "model_test/mul_17",
@@ -890,7 +890,7 @@
             "name": "Mul#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802571,
+            "ts": 1596941878633624,
             "dur": 5,
             "args": {
                 "name": "model_test/mul_7",
@@ -903,7 +903,7 @@
             "name": "Mul#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802578,
+            "ts": 1596941878633631,
             "dur": 5,
             "args": {
                 "name": "model_test/mul_6",
@@ -916,7 +916,7 @@
             "name": "Mul#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802585,
+            "ts": 1596941878633638,
             "dur": 5,
             "args": {
                 "name": "model_test/mul_9",
@@ -929,7 +929,7 @@
             "name": "Mul#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802592,
+            "ts": 1596941878633645,
             "dur": 7,
             "args": {
                 "name": "model_test/mul_19",
@@ -942,7 +942,7 @@
             "name": "Mul#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802602,
+            "ts": 1596941878633654,
             "dur": 5,
             "args": {
                 "name": "model_test/mul_18",
@@ -955,8 +955,8 @@
             "name": "Mul#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802609,
-            "dur": 7,
+            "ts": 1596941878633661,
+            "dur": 6,
             "args": {
                 "name": "model_test/mul_21",
                 "op": "Mul#id=13,device=/job"
@@ -968,7 +968,7 @@
             "name": "AddV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802618,
+            "ts": 1596941878633669,
             "dur": 5,
             "args": {
                 "name": "model_test/add_2",
@@ -981,7 +981,7 @@
             "name": "AddV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802625,
+            "ts": 1596941878633676,
             "dur": 5,
             "args": {
                 "name": "model_test/add_3",
@@ -994,7 +994,7 @@
             "name": "AddV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802632,
+            "ts": 1596941878633683,
             "dur": 7,
             "args": {
                 "name": "model_test/add_8",
@@ -1007,8 +1007,8 @@
             "name": "AddV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802641,
-            "dur": 5,
+            "ts": 1596941878633692,
+            "dur": 6,
             "args": {
                 "name": "model_test/add_9",
                 "op": "AddV2#id=13,device=/job"
@@ -1020,7 +1020,7 @@
             "name": "ConcatV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802648,
+            "ts": 1596941878633699,
             "dur": 5,
             "args": {
                 "name": "model_test/concat_1",
@@ -1033,7 +1033,7 @@
             "name": "ConcatV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802655,
+            "ts": 1596941878633706,
             "dur": 5,
             "args": {
                 "name": "model_test/concat_1",
@@ -1046,7 +1046,7 @@
             "name": "ConcatV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802662,
+            "ts": 1596941878633713,
             "dur": 5,
             "args": {
                 "name": "model_test/concat_1",
@@ -1059,7 +1059,7 @@
             "name": "ConcatV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802669,
+            "ts": 1596941878633719,
             "dur": 5,
             "args": {
                 "name": "model_test/concat_1",
@@ -1072,7 +1072,7 @@
             "name": "ConcatV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802676,
+            "ts": 1596941878633726,
             "dur": 5,
             "args": {
                 "name": "model_test/concat_1",
@@ -1085,7 +1085,7 @@
             "name": "ConcatV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802683,
+            "ts": 1596941878633733,
             "dur": 5,
             "args": {
                 "name": "model_test/concat_1",
@@ -1098,7 +1098,7 @@
             "name": "ConcatV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802690,
+            "ts": 1596941878633740,
             "dur": 12,
             "args": {
                 "name": "model_test/concat_3",
@@ -1111,33 +1111,7 @@
             "name": "ConcatV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802704,
-            "dur": 12,
-            "args": {
-                "name": "model_test/concat_3",
-                "op": "ConcatV2#id=13,device=/job"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "ConcatV2#id=13,device=/job",
-            "pid": 3,
-            "tid": 0,
-            "ts": 1596819246802717,
-            "dur": 12,
-            "args": {
-                "name": "model_test/concat_3",
-                "op": "ConcatV2#id=13,device=/job"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "ConcatV2#id=13,device=/job",
-            "pid": 3,
-            "tid": 0,
-            "ts": 1596819246802732,
+            "ts": 1596941878633754,
             "dur": 13,
             "args": {
                 "name": "model_test/concat_3",
@@ -1150,7 +1124,7 @@
             "name": "ConcatV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802747,
+            "ts": 1596941878633769,
             "dur": 14,
             "args": {
                 "name": "model_test/concat_3",
@@ -1163,7 +1137,33 @@
             "name": "ConcatV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802763,
+            "ts": 1596941878633784,
+            "dur": 13,
+            "args": {
+                "name": "model_test/concat_3",
+                "op": "ConcatV2#id=13,device=/job"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ConcatV2#id=13,device=/job",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1596941878633800,
+            "dur": 13,
+            "args": {
+                "name": "model_test/concat_3",
+                "op": "ConcatV2#id=13,device=/job"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ConcatV2#id=13,device=/job",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1596941878633815,
             "dur": 14,
             "args": {
                 "name": "model_test/concat_3",
@@ -1176,7 +1176,7 @@
             "name": "ConcatV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802778,
+            "ts": 1596941878633831,
             "dur": 5,
             "args": {
                 "name": "model_test/concat_2",
@@ -1189,7 +1189,7 @@
             "name": "ConcatV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802785,
+            "ts": 1596941878633838,
             "dur": 5,
             "args": {
                 "name": "model_test/concat_2",
@@ -1202,8 +1202,8 @@
             "name": "ConcatV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802793,
-            "dur": 25,
+            "ts": 1596941878633844,
+            "dur": 24,
             "args": {
                 "name": "model_test/concat_4",
                 "op": "ConcatV2#id=13,device=/job"
@@ -1215,7 +1215,7 @@
             "name": "ConcatV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802820,
+            "ts": 1596941878633870,
             "dur": 21,
             "args": {
                 "name": "model_test/concat_4",
@@ -1228,7 +1228,7 @@
             "name": "Tile#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246802842,
+            "ts": 1596941878633893,
             "dur": 50,
             "args": {
                 "name": "model_test/tile_by_dim/Tile",
@@ -1241,8 +1241,8 @@
             "name": "BatchMatMulV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246807994,
-            "dur": 1451,
+            "ts": 1596941878643160,
+            "dur": 1444,
             "args": {
                 "name": "model_test/MatMul",
                 "op": "BatchMatMulV2#id=13,device=/job"
@@ -1254,8 +1254,8 @@
             "name": "BatchMatMulV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246809447,
-            "dur": 1442,
+            "ts": 1596941878644606,
+            "dur": 1441,
             "args": {
                 "name": "model_test/MatMul",
                 "op": "BatchMatMulV2#id=13,device=/job"
@@ -1267,7 +1267,7 @@
             "name": "BatchMatMulV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246810891,
+            "ts": 1596941878646049,
             "dur": 1443,
             "args": {
                 "name": "model_test/MatMul",
@@ -1280,8 +1280,8 @@
             "name": "BatchMatMulV2#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246812336,
-            "dur": 1308,
+            "ts": 1596941878647494,
+            "dur": 1309,
             "args": {
                 "name": "model_test/MatMul",
                 "op": "BatchMatMulV2#id=13,device=/job"
@@ -1293,10 +1293,127 @@
             "name": "BatchMatMulV2#id=13,device=/job",
             "pid": 3,
             "tid": 1,
-            "ts": 1596819246799323,
+            "ts": 1596941878621254,
+            "dur": 8,
+            "args": {
+                "name": "model_test/batch_mlp/batch_linear/MatMul",
+                "op": "BatchMatMulV2#id=13,device=/job"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BatchMatMulV2#id=13,device=/job",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1596941878621265,
+            "dur": 8,
+            "args": {
+                "name": "model_test/batch_mlp/batch_linear/MatMul",
+                "op": "BatchMatMulV2#id=13,device=/job"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BatchMatMulV2#id=13,device=/job",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1596941878621275,
+            "dur": 8,
+            "args": {
+                "name": "model_test/batch_mlp/batch_linear/MatMul",
+                "op": "BatchMatMulV2#id=13,device=/job"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BatchMatMulV2#id=13,device=/job",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1596941878631230,
+            "dur": 17,
+            "args": {
+                "name": "model_test/batch_mlp/batch_linear_1/MatMul",
+                "op": "BatchMatMulV2#id=13,device=/job"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BatchMatMulV2#id=13,device=/job",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1596941878631249,
+            "dur": 12,
+            "args": {
+                "name": "model_test/batch_mlp/batch_linear_1/MatMul",
+                "op": "BatchMatMulV2#id=13,device=/job"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BatchMatMulV2#id=13,device=/job",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1596941878631263,
+            "dur": 11,
+            "args": {
+                "name": "model_test/batch_mlp/batch_linear_1/MatMul",
+                "op": "BatchMatMulV2#id=13,device=/job"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BatchMatMulV2#id=13,device=/job",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1596941878631590,
+            "dur": 15,
+            "args": {
+                "name": "model_test/batch_mlp_1/batch_linear/MatMul",
+                "op": "BatchMatMulV2#id=13,device=/job"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BatchMatMulV2#id=13,device=/job",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1596941878631606,
+            "dur": 11,
+            "args": {
+                "name": "model_test/batch_mlp_1/batch_linear/MatMul",
+                "op": "BatchMatMulV2#id=13,device=/job"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BatchMatMulV2#id=13,device=/job",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1596941878631619,
+            "dur": 10,
+            "args": {
+                "name": "model_test/batch_mlp_1/batch_linear/MatMul",
+                "op": "BatchMatMulV2#id=13,device=/job"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BatchMatMulV2#id=13,device=/job",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1596941878631893,
             "dur": 9,
             "args": {
-                "name": "model_test/batch_mlp/batch_linear/MatMul",
+                "name": "model_test/batch_mlp_1/batch_linear_1/MatMul",
                 "op": "BatchMatMulV2#id=13,device=/job"
             }
         },
@@ -1306,112 +1423,8 @@
             "name": "BatchMatMulV2#id=13,device=/job",
             "pid": 3,
             "tid": 1,
-            "ts": 1596819246799334,
-            "dur": 8,
-            "args": {
-                "name": "model_test/batch_mlp/batch_linear/MatMul",
-                "op": "BatchMatMulV2#id=13,device=/job"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "BatchMatMulV2#id=13,device=/job",
-            "pid": 3,
-            "tid": 1,
-            "ts": 1596819246799344,
-            "dur": 8,
-            "args": {
-                "name": "model_test/batch_mlp/batch_linear/MatMul",
-                "op": "BatchMatMulV2#id=13,device=/job"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "BatchMatMulV2#id=13,device=/job",
-            "pid": 3,
-            "tid": 1,
-            "ts": 1596819246800365,
-            "dur": 8,
-            "args": {
-                "name": "model_test/batch_mlp/batch_linear_1/MatMul",
-                "op": "BatchMatMulV2#id=13,device=/job"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "BatchMatMulV2#id=13,device=/job",
-            "pid": 3,
-            "tid": 1,
-            "ts": 1596819246800376,
-            "dur": 9,
-            "args": {
-                "name": "model_test/batch_mlp/batch_linear_1/MatMul",
-                "op": "BatchMatMulV2#id=13,device=/job"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "BatchMatMulV2#id=13,device=/job",
-            "pid": 3,
-            "tid": 1,
-            "ts": 1596819246800386,
-            "dur": 8,
-            "args": {
-                "name": "model_test/batch_mlp/batch_linear_1/MatMul",
-                "op": "BatchMatMulV2#id=13,device=/job"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "BatchMatMulV2#id=13,device=/job",
-            "pid": 3,
-            "tid": 1,
-            "ts": 1596819246800559,
-            "dur": 8,
-            "args": {
-                "name": "model_test/batch_mlp_1/batch_linear/MatMul",
-                "op": "BatchMatMulV2#id=13,device=/job"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "BatchMatMulV2#id=13,device=/job",
-            "pid": 3,
-            "tid": 1,
-            "ts": 1596819246800570,
-            "dur": 8,
-            "args": {
-                "name": "model_test/batch_mlp_1/batch_linear/MatMul",
-                "op": "BatchMatMulV2#id=13,device=/job"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "BatchMatMulV2#id=13,device=/job",
-            "pid": 3,
-            "tid": 1,
-            "ts": 1596819246800580,
-            "dur": 8,
-            "args": {
-                "name": "model_test/batch_mlp_1/batch_linear/MatMul",
-                "op": "BatchMatMulV2#id=13,device=/job"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "BatchMatMulV2#id=13,device=/job",
-            "pid": 3,
-            "tid": 1,
-            "ts": 1596819246800849,
-            "dur": 8,
+            "ts": 1596941878631904,
+            "dur": 10,
             "args": {
                 "name": "model_test/batch_mlp_1/batch_linear_1/MatMul",
                 "op": "BatchMatMulV2#id=13,device=/job"
@@ -1423,8 +1436,8 @@
             "name": "BatchMatMulV2#id=13,device=/job",
             "pid": 3,
             "tid": 1,
-            "ts": 1596819246800859,
-            "dur": 8,
+            "ts": 1596941878631917,
+            "dur": 11,
             "args": {
                 "name": "model_test/batch_mlp_1/batch_linear_1/MatMul",
                 "op": "BatchMatMulV2#id=13,device=/job"
@@ -1436,21 +1449,8 @@
             "name": "BatchMatMulV2#id=13,device=/job",
             "pid": 3,
             "tid": 1,
-            "ts": 1596819246800870,
-            "dur": 8,
-            "args": {
-                "name": "model_test/batch_mlp_1/batch_linear_1/MatMul",
-                "op": "BatchMatMulV2#id=13,device=/job"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "BatchMatMulV2#id=13,device=/job",
-            "pid": 3,
-            "tid": 1,
-            "ts": 1596819246807248,
-            "dur": 314,
+            "ts": 1596941878642383,
+            "dur": 321,
             "args": {
                 "name": "model_test/MatMul",
                 "op": "BatchMatMulV2#id=13,device=/job"
@@ -1462,8 +1462,8 @@
             "name": "BatchMatMulV2#id=13,device=/job",
             "pid": 3,
             "tid": 1,
-            "ts": 1596819246807565,
-            "dur": 215,
+            "ts": 1596941878642707,
+            "dur": 231,
             "args": {
                 "name": "model_test/MatMul",
                 "op": "BatchMatMulV2#id=13,device=/job"
@@ -1475,8 +1475,8 @@
             "name": "BatchMatMulV2#id=13,device=/job",
             "pid": 3,
             "tid": 1,
-            "ts": 1596819246807783,
-            "dur": 209,
+            "ts": 1596941878642941,
+            "dur": 217,
             "args": {
                 "name": "model_test/MatMul",
                 "op": "BatchMatMulV2#id=13,device=/job"
@@ -1488,7 +1488,7 @@
             "name": "_Send#id=13,device=/job",
             "pid": 3,
             "tid": 0,
-            "ts": 1596819246813646,
+            "ts": 1596941878648806,
             "dur": 704,
             "args": {
                 "name": "model_test/MatMul/_0",
@@ -1501,47 +1501,8 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246794274,
-            "dur": 1097,
-            "args": {
-                "name": "model_test/batch_mlp_1/batch_linear/tile_by_dim/Tile:Tile#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 4, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorBroadcastingOp<Eigen::array<int, 4ul> const, Eigen::TensorMap<Eigen::Tensor<float const, 4, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 4, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorBroadcastingOp<Eigen::array<int, 4ul> const, Eigen::TensorMap<Eigen::Tensor<float const, 4, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
-                "op": "unknown"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "unknown",
-            "pid": 5,
-            "tid": 0,
-            "ts": 1596819246795373,
-            "dur": 135,
-            "args": {
-                "name": "model_test/batch_mlp/batch_linear_1/tile_by_dim/Tile:Tile#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 4, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorBroadcastingOp<Eigen::array<int, 4ul> const, Eigen::TensorMap<Eigen::Tensor<float const, 4, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 4, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorBroadcastingOp<Eigen::array<int, 4ul> const, Eigen::TensorMap<Eigen::Tensor<float const, 4, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
-                "op": "unknown"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "unknown",
-            "pid": 5,
-            "tid": 0,
-            "ts": 1596819246795510,
-            "dur": 1682,
-            "args": {
-                "name": "model_test/batch_mlp/batch_linear/tile_by_dim/Tile:Tile#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 4, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorBroadcastingOp<Eigen::array<int, 4ul> const, Eigen::TensorMap<Eigen::Tensor<float const, 4, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 4, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorBroadcastingOp<Eigen::array<int, 4ul> const, Eigen::TensorMap<Eigen::Tensor<float const, 4, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
-                "op": "unknown"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "unknown",
-            "pid": 5,
-            "tid": 0,
-            "ts": 1596819246797194,
-            "dur": 2127,
+            "ts": 1596941878615781,
+            "dur": 3521,
             "args": {
                 "name": "model_test/batch_mlp_1/batch_linear_1/tile_by_dim/Tile:Tile#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 4, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorBroadcastingOp<Eigen::array<int, 4ul> const, Eigen::TensorMap<Eigen::Tensor<float const, 4, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 4, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorBroadcastingOp<Eigen::array<int, 4ul> const, Eigen::TensorMap<Eigen::Tensor<float const, 4, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
                 "op": "unknown"
@@ -1553,8 +1514,47 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246799355,
-            "dur": 985,
+            "ts": 1596941878619305,
+            "dur": 129,
+            "args": {
+                "name": "model_test/batch_mlp_1/batch_linear/tile_by_dim/Tile:Tile#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 4, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorBroadcastingOp<Eigen::array<int, 4ul> const, Eigen::TensorMap<Eigen::Tensor<float const, 4, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 4, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorBroadcastingOp<Eigen::array<int, 4ul> const, Eigen::TensorMap<Eigen::Tensor<float const, 4, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 5,
+            "tid": 0,
+            "ts": 1596941878619436,
+            "dur": 1683,
+            "args": {
+                "name": "model_test/batch_mlp/batch_linear/tile_by_dim/Tile:Tile#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 4, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorBroadcastingOp<Eigen::array<int, 4ul> const, Eigen::TensorMap<Eigen::Tensor<float const, 4, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 4, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorBroadcastingOp<Eigen::array<int, 4ul> const, Eigen::TensorMap<Eigen::Tensor<float const, 4, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 5,
+            "tid": 0,
+            "ts": 1596941878621121,
+            "dur": 132,
+            "args": {
+                "name": "model_test/batch_mlp/batch_linear_1/tile_by_dim/Tile:Tile#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 4, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorBroadcastingOp<Eigen::array<int, 4ul> const, Eigen::TensorMap<Eigen::Tensor<float const, 4, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 4, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorBroadcastingOp<Eigen::array<int, 4ul> const, Eigen::TensorMap<Eigen::Tensor<float const, 4, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 5,
+            "tid": 0,
+            "ts": 1596941878621285,
+            "dur": 984,
             "args": {
                 "name": "model_test/batch_mlp/batch_linear/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void gemv2N_kernel_val<float, float, float, 128, 8, 4, 4, 1, cublasGemvParams<cublasGemvTensorBatched<float const>, cublasGemvTensorBatched<float>, float> >(float, float, cublasGemvParams<cublasGemvTensorBatched<float const>, cublasGemvTensorBatched<float>, float>)",
                 "op": "unknown"
@@ -1566,8 +1566,8 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246800341,
-            "dur": 12,
+            "ts": 1596941878630619,
+            "dur": 44,
             "args": {
                 "name": "model_test/batch_mlp/batch_linear/add/add:AddV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_sum_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorBroadcastingOp<Eigen::array<long, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_sum_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorBroadcastingOp<Eigen::array<long, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const> const> const, Eigen::GpuDevice>, int)",
                 "op": "unknown"
@@ -1579,8 +1579,8 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246800355,
-            "dur": 8,
+            "ts": 1596941878630699,
+            "dur": 25,
             "args": {
                 "name": "model_test/batch_mlp/Relu:Relu#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, long>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_max_op<float const, float const>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const, Eigen::TensorCwiseNullaryOp<Eigen::internal::scalar_constant_op<float const>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const> const, Eigen::GpuDevice>, long>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, long>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_max_op<float const, float const>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const, Eigen::TensorCwiseNullaryOp<Eigen::internal::scalar_constant_op<float const>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const> const, Eigen::GpuDevice>, long)",
                 "op": "unknown"
@@ -1592,8 +1592,8 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246800397,
-            "dur": 137,
+            "ts": 1596941878631287,
+            "dur": 143,
             "args": {
                 "name": "model_test/batch_mlp/batch_linear_1/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void gemv2N_kernel_val<float, float, float, 128, 8, 4, 4, 1, cublasGemvParams<cublasGemvTensorBatched<float const>, cublasGemvTensorBatched<float>, float> >(float, float, cublasGemvParams<cublasGemvTensorBatched<float const>, cublasGemvTensorBatched<float>, float>)",
                 "op": "unknown"
@@ -1605,7 +1605,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246800536,
+            "ts": 1596941878631431,
             "dur": 6,
             "args": {
                 "name": "model_test/batch_mlp/batch_linear_1/add/add:AddV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_sum_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorBroadcastingOp<Eigen::array<long, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_sum_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorBroadcastingOp<Eigen::array<long, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const> const> const, Eigen::GpuDevice>, int)",
@@ -1618,7 +1618,20 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246800544,
+            "ts": 1596941878631440,
+            "dur": 5,
+            "args": {
+                "name": "model_test/concat:ConcatV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int)",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 5,
+            "tid": 0,
+            "ts": 1596941878631447,
             "dur": 6,
             "args": {
                 "name": "model_test/concat:ConcatV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int)",
@@ -1631,21 +1644,8 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246800552,
-            "dur": 6,
-            "args": {
-                "name": "model_test/concat:ConcatV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int)",
-                "op": "unknown"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "unknown",
-            "pid": 5,
-            "tid": 0,
-            "ts": 1596819246800591,
-            "dur": 234,
+            "ts": 1596941878631631,
+            "dur": 238,
             "args": {
                 "name": "model_test/batch_mlp_1/batch_linear/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void gemv2N_kernel_val<float, float, float, 128, 8, 4, 4, 1, cublasGemvParams<cublasGemvTensorBatched<float const>, cublasGemvTensorBatched<float>, float> >(float, float, cublasGemvParams<cublasGemvTensorBatched<float const>, cublasGemvTensorBatched<float>, float>)",
                 "op": "unknown"
@@ -1657,7 +1657,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246800827,
+            "ts": 1596941878631871,
             "dur": 11,
             "args": {
                 "name": "model_test/batch_mlp_1/batch_linear/add/add:AddV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_sum_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorBroadcastingOp<Eigen::array<long, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_sum_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorBroadcastingOp<Eigen::array<long, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const> const> const, Eigen::GpuDevice>, int)",
@@ -1670,7 +1670,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246800840,
+            "ts": 1596941878631884,
             "dur": 7,
             "args": {
                 "name": "model_test/batch_mlp_1/Relu:Relu#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, long>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_max_op<float const, float const>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const, Eigen::TensorCwiseNullaryOp<Eigen::internal::scalar_constant_op<float const>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const> const, Eigen::GpuDevice>, long>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, long>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_max_op<float const, float const>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const, Eigen::TensorCwiseNullaryOp<Eigen::internal::scalar_constant_op<float const>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const> const, Eigen::GpuDevice>, long)",
@@ -1683,8 +1683,8 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246800880,
-            "dur": 1280,
+            "ts": 1596941878631930,
+            "dur": 1289,
             "args": {
                 "name": "model_test/batch_mlp_1/batch_linear_1/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void gemv2N_kernel_val<float, float, float, 128, 8, 4, 4, 1, cublasGemvParams<cublasGemvTensorBatched<float const>, cublasGemvTensorBatched<float>, float> >(float, float, cublasGemvParams<cublasGemvTensorBatched<float const>, cublasGemvTensorBatched<float>, float>)",
                 "op": "unknown"
@@ -1696,7 +1696,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802162,
+            "ts": 1596941878633220,
             "dur": 18,
             "args": {
                 "name": "model_test/split:SplitV#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorSlicingOp<Eigen::DSizes<long, 2> const, Eigen::DSizes<long, 2> const, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorSlicingOp<Eigen::DSizes<long, 2> const, Eigen::DSizes<long, 2> const, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -1709,7 +1709,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802182,
+            "ts": 1596941878633240,
             "dur": 6,
             "args": {
                 "name": "model_test/split:SplitV#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorSlicingOp<Eigen::DSizes<long, 2> const, Eigen::DSizes<long, 2> const, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorSlicingOp<Eigen::DSizes<long, 2> const, Eigen::DSizes<long, 2> const, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -1722,7 +1722,20 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802190,
+            "ts": 1596941878633248,
+            "dur": 5,
+            "args": {
+                "name": "model_test/split:SplitV#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorSlicingOp<Eigen::DSizes<long, 2> const, Eigen::DSizes<long, 2> const, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorSlicingOp<Eigen::DSizes<long, 2> const, Eigen::DSizes<long, 2> const, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 5,
+            "tid": 0,
+            "ts": 1596941878633256,
             "dur": 6,
             "args": {
                 "name": "model_test/split:SplitV#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorSlicingOp<Eigen::DSizes<long, 2> const, Eigen::DSizes<long, 2> const, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorSlicingOp<Eigen::DSizes<long, 2> const, Eigen::DSizes<long, 2> const, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -1735,7 +1748,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802197,
+            "ts": 1596941878633264,
             "dur": 7,
             "args": {
                 "name": "model_test/split:SplitV#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorSlicingOp<Eigen::DSizes<long, 2> const, Eigen::DSizes<long, 2> const, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorSlicingOp<Eigen::DSizes<long, 2> const, Eigen::DSizes<long, 2> const, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -1748,20 +1761,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802206,
-            "dur": 7,
-            "args": {
-                "name": "model_test/split:SplitV#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorSlicingOp<Eigen::DSizes<long, 2> const, Eigen::DSizes<long, 2> const, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorSlicingOp<Eigen::DSizes<long, 2> const, Eigen::DSizes<long, 2> const, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
-                "op": "unknown"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "unknown",
-            "pid": 5,
-            "tid": 0,
-            "ts": 1596819246802216,
+            "ts": 1596941878633273,
             "dur": 20,
             "args": {
                 "name": "model_test/add_5:AddV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_sum_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorBroadcastingOp<Eigen::array<long, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_sum_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorBroadcastingOp<Eigen::array<long, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const> const> const, Eigen::GpuDevice>, int)",
@@ -1774,7 +1774,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802238,
+            "ts": 1596941878633295,
             "dur": 10,
             "args": {
                 "name": "model_test/split_1:Split#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void tensorflow::(anonymous namespace)::SplitOpKernel<float>(float const*, int, int, int, tensorflow::GpuDeviceArrayStruct<float*, 8>)",
@@ -1787,8 +1787,8 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802250,
-            "dur": 36,
+            "ts": 1596941878633307,
+            "dur": 35,
             "args": {
                 "name": "model_test/split_2:Split#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void tensorflow::(anonymous namespace)::SplitOpKernel<float>(float const*, int, int, int, tensorflow::GpuDeviceArrayStruct<float*, 8>)",
                 "op": "unknown"
@@ -1800,7 +1800,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802288,
+            "ts": 1596941878633344,
             "dur": 6,
             "args": {
                 "name": "model_test/Sigmoid:Sigmoid#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_logistic_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_logistic_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -1813,7 +1813,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802296,
+            "ts": 1596941878633353,
             "dur": 6,
             "args": {
                 "name": "model_test/Sigmoid_1:Sigmoid#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_logistic_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_logistic_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -1826,7 +1826,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802304,
+            "ts": 1596941878633361,
             "dur": 5,
             "args": {
                 "name": "model_test/mul_3:Mul#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_left<float, float, Eigen::internal::scalar_product_op<float, float>, false>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_left<float, float, Eigen::internal::scalar_product_op<float, float>, false>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -1839,7 +1839,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802311,
+            "ts": 1596941878633368,
             "dur": 5,
             "args": {
                 "name": "model_test/mul_2:Mul#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_left<float, float, Eigen::internal::scalar_product_op<float, float>, false>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_left<float, float, Eigen::internal::scalar_product_op<float, float>, false>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -1852,7 +1852,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802319,
+            "ts": 1596941878633375,
             "dur": 5,
             "args": {
                 "name": "model_test/mul:Mul#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_left<float, float, Eigen::internal::scalar_product_op<float, float>, false>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_left<float, float, Eigen::internal::scalar_product_op<float, float>, false>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -1865,7 +1865,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802325,
+            "ts": 1596941878633381,
             "dur": 5,
             "args": {
                 "name": "model_test/mul_1:Mul#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_left<float, float, Eigen::internal::scalar_product_op<float, float>, false>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_left<float, float, Eigen::internal::scalar_product_op<float, float>, false>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -1878,7 +1878,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802332,
+            "ts": 1596941878633388,
             "dur": 7,
             "args": {
                 "name": "model_test/Sigmoid_2:Sigmoid#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_logistic_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_logistic_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -1891,7 +1891,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802341,
+            "ts": 1596941878633397,
             "dur": 7,
             "args": {
                 "name": "model_test/Sigmoid_3:Sigmoid#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_logistic_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_logistic_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -1904,7 +1904,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802350,
+            "ts": 1596941878633405,
             "dur": 6,
             "args": {
                 "name": "model_test/mul_15:Mul#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_left<float, float, Eigen::internal::scalar_product_op<float, float>, false>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_left<float, float, Eigen::internal::scalar_product_op<float, float>, false>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -1917,8 +1917,8 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802358,
-            "dur": 6,
+            "ts": 1596941878633413,
+            "dur": 7,
             "args": {
                 "name": "model_test/mul_14:Mul#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_left<float, float, Eigen::internal::scalar_product_op<float, float>, false>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_left<float, float, Eigen::internal::scalar_product_op<float, float>, false>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
                 "op": "unknown"
@@ -1930,8 +1930,8 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802367,
-            "dur": 7,
+            "ts": 1596941878633422,
+            "dur": 6,
             "args": {
                 "name": "model_test/mul_12:Mul#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_left<float, float, Eigen::internal::scalar_product_op<float, float>, false>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_left<float, float, Eigen::internal::scalar_product_op<float, float>, false>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
                 "op": "unknown"
@@ -1943,7 +1943,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802376,
+            "ts": 1596941878633430,
             "dur": 7,
             "args": {
                 "name": "model_test/mul_13:Mul#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_left<float, float, Eigen::internal::scalar_product_op<float, float>, false>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_left<float, float, Eigen::internal::scalar_product_op<float, float>, false>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -1956,7 +1956,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802384,
+            "ts": 1596941878633439,
             "dur": 5,
             "args": {
                 "name": "model_test/add:AddV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_right<float, float, Eigen::internal::scalar_sum_op<float, float>, false>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_right<float, float, Eigen::internal::scalar_sum_op<float, float>, false>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -1969,7 +1969,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802391,
+            "ts": 1596941878633446,
             "dur": 5,
             "args": {
                 "name": "model_test/add_1:AddV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_right<float, float, Eigen::internal::scalar_sum_op<float, float>, false>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_right<float, float, Eigen::internal::scalar_sum_op<float, float>, false>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -1982,7 +1982,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802398,
+            "ts": 1596941878633453,
             "dur": 5,
             "args": {
                 "name": "model_test/Cos:Cos#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_cos_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_cos_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -1995,7 +1995,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802405,
+            "ts": 1596941878633460,
             "dur": 5,
             "args": {
                 "name": "model_test/Sin:Sin#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_sin_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_sin_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -2008,7 +2008,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802412,
+            "ts": 1596941878633467,
             "dur": 5,
             "args": {
                 "name": "model_test/Tanh_2:Tanh#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_tanh_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_tanh_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -2021,7 +2021,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802419,
+            "ts": 1596941878633474,
             "dur": 4,
             "args": {
                 "name": "model_test/Tanh:Tanh#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_tanh_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_tanh_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -2034,7 +2034,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802425,
+            "ts": 1596941878633480,
             "dur": 4,
             "args": {
                 "name": "model_test/Tanh_1:Tanh#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_tanh_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_tanh_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -2047,7 +2047,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802432,
+            "ts": 1596941878633486,
             "dur": 6,
             "args": {
                 "name": "model_test/add_6:AddV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_right<float, float, Eigen::internal::scalar_sum_op<float, float>, false>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_right<float, float, Eigen::internal::scalar_sum_op<float, float>, false>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -2060,7 +2060,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802440,
+            "ts": 1596941878633494,
             "dur": 6,
             "args": {
                 "name": "model_test/add_7:AddV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_right<float, float, Eigen::internal::scalar_sum_op<float, float>, false>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_right<float, float, Eigen::internal::scalar_sum_op<float, float>, false>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -2073,7 +2073,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802447,
+            "ts": 1596941878633502,
             "dur": 6,
             "args": {
                 "name": "model_test/Cos_1:Cos#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_cos_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_cos_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -2086,7 +2086,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802455,
+            "ts": 1596941878633510,
             "dur": 6,
             "args": {
                 "name": "model_test/Sin_1:Sin#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_sin_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_sin_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -2099,7 +2099,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802463,
+            "ts": 1596941878633518,
             "dur": 7,
             "args": {
                 "name": "model_test/Tanh_5:Tanh#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_tanh_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_tanh_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -2112,8 +2112,8 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802472,
-            "dur": 8,
+            "ts": 1596941878633527,
+            "dur": 7,
             "args": {
                 "name": "model_test/Tanh_3:Tanh#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_tanh_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_tanh_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
                 "op": "unknown"
@@ -2125,7 +2125,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802482,
+            "ts": 1596941878633536,
             "dur": 7,
             "args": {
                 "name": "model_test/Tanh_4:Tanh#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_tanh_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_tanh_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -2138,7 +2138,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802491,
+            "ts": 1596941878633545,
             "dur": 5,
             "args": {
                 "name": "model_test/Neg:Neg#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_opposite_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_opposite_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -2151,8 +2151,8 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802498,
-            "dur": 6,
+            "ts": 1596941878633552,
+            "dur": 5,
             "args": {
                 "name": "model_test/mul_4:Mul#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long)",
                 "op": "unknown"
@@ -2164,7 +2164,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802506,
+            "ts": 1596941878633560,
             "dur": 5,
             "args": {
                 "name": "model_test/mul_11:Mul#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long)",
@@ -2177,7 +2177,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802513,
+            "ts": 1596941878633567,
             "dur": 5,
             "args": {
                 "name": "model_test/mul_10:Mul#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long)",
@@ -2190,7 +2190,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802520,
+            "ts": 1596941878633573,
             "dur": 5,
             "args": {
                 "name": "model_test/mul_5:Mul#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long)",
@@ -2203,8 +2203,8 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802527,
-            "dur": 7,
+            "ts": 1596941878633581,
+            "dur": 6,
             "args": {
                 "name": "model_test/Neg_1:Neg#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_opposite_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_opposite_op<float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
                 "op": "unknown"
@@ -2216,7 +2216,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802536,
+            "ts": 1596941878633589,
             "dur": 7,
             "args": {
                 "name": "model_test/mul_16:Mul#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long)",
@@ -2229,7 +2229,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802544,
+            "ts": 1596941878633598,
             "dur": 7,
             "args": {
                 "name": "model_test/mul_23:Mul#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long)",
@@ -2242,7 +2242,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802553,
+            "ts": 1596941878633606,
             "dur": 7,
             "args": {
                 "name": "model_test/mul_22:Mul#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long)",
@@ -2255,7 +2255,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802562,
+            "ts": 1596941878633615,
             "dur": 7,
             "args": {
                 "name": "model_test/mul_17:Mul#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long)",
@@ -2268,7 +2268,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802571,
+            "ts": 1596941878633624,
             "dur": 5,
             "args": {
                 "name": "model_test/mul_7:Mul#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long)",
@@ -2281,7 +2281,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802578,
+            "ts": 1596941878633631,
             "dur": 5,
             "args": {
                 "name": "model_test/mul_6:Mul#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long)",
@@ -2294,7 +2294,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802585,
+            "ts": 1596941878633638,
             "dur": 5,
             "args": {
                 "name": "model_test/mul_9:Mul#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long)",
@@ -2307,7 +2307,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802592,
+            "ts": 1596941878633645,
             "dur": 7,
             "args": {
                 "name": "model_test/mul_19:Mul#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long)",
@@ -2320,7 +2320,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802602,
+            "ts": 1596941878633654,
             "dur": 5,
             "args": {
                 "name": "model_test/mul_18:Mul#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long)",
@@ -2333,8 +2333,8 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802609,
-            "dur": 7,
+            "ts": 1596941878633661,
+            "dur": 6,
             "args": {
                 "name": "model_test/mul_21:Mul#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long)",
                 "op": "unknown"
@@ -2346,7 +2346,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802618,
+            "ts": 1596941878633669,
             "dur": 5,
             "args": {
                 "name": "model_test/add_2:AddV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_sum_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_sum_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long)",
@@ -2359,7 +2359,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802625,
+            "ts": 1596941878633676,
             "dur": 5,
             "args": {
                 "name": "model_test/add_3:AddV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_sum_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_sum_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long)",
@@ -2372,7 +2372,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802632,
+            "ts": 1596941878633683,
             "dur": 7,
             "args": {
                 "name": "model_test/add_8:AddV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_sum_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_sum_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long)",
@@ -2385,8 +2385,8 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802641,
-            "dur": 5,
+            "ts": 1596941878633692,
+            "dur": 6,
             "args": {
                 "name": "model_test/add_9:AddV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_sum_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_sum_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, int>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long)",
                 "op": "unknown"
@@ -2398,7 +2398,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802648,
+            "ts": 1596941878633699,
             "dur": 5,
             "args": {
                 "name": "model_test/concat_1:ConcatV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int)",
@@ -2411,7 +2411,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802655,
+            "ts": 1596941878633706,
             "dur": 5,
             "args": {
                 "name": "model_test/concat_1:ConcatV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int)",
@@ -2424,7 +2424,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802662,
+            "ts": 1596941878633713,
             "dur": 5,
             "args": {
                 "name": "model_test/concat_1:ConcatV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int)",
@@ -2437,7 +2437,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802669,
+            "ts": 1596941878633719,
             "dur": 5,
             "args": {
                 "name": "model_test/concat_1:ConcatV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int)",
@@ -2450,7 +2450,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802676,
+            "ts": 1596941878633726,
             "dur": 5,
             "args": {
                 "name": "model_test/concat_1:ConcatV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int)",
@@ -2463,7 +2463,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802683,
+            "ts": 1596941878633733,
             "dur": 5,
             "args": {
                 "name": "model_test/concat_1:ConcatV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int)",
@@ -2476,7 +2476,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802690,
+            "ts": 1596941878633740,
             "dur": 12,
             "args": {
                 "name": "model_test/concat_3:ConcatV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int)",
@@ -2489,33 +2489,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802704,
-            "dur": 12,
-            "args": {
-                "name": "model_test/concat_3:ConcatV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int)",
-                "op": "unknown"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "unknown",
-            "pid": 5,
-            "tid": 0,
-            "ts": 1596819246802717,
-            "dur": 12,
-            "args": {
-                "name": "model_test/concat_3:ConcatV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int)",
-                "op": "unknown"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "unknown",
-            "pid": 5,
-            "tid": 0,
-            "ts": 1596819246802732,
+            "ts": 1596941878633754,
             "dur": 13,
             "args": {
                 "name": "model_test/concat_3:ConcatV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int)",
@@ -2528,7 +2502,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802747,
+            "ts": 1596941878633769,
             "dur": 14,
             "args": {
                 "name": "model_test/concat_3:ConcatV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int)",
@@ -2541,7 +2515,33 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802763,
+            "ts": 1596941878633784,
+            "dur": 13,
+            "args": {
+                "name": "model_test/concat_3:ConcatV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int)",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 5,
+            "tid": 0,
+            "ts": 1596941878633800,
+            "dur": 13,
+            "args": {
+                "name": "model_test/concat_3:ConcatV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int)",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 5,
+            "tid": 0,
+            "ts": 1596941878633815,
             "dur": 14,
             "args": {
                 "name": "model_test/concat_3:ConcatV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int)",
@@ -2554,7 +2554,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802778,
+            "ts": 1596941878633831,
             "dur": 5,
             "args": {
                 "name": "model_test/concat_2:ConcatV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int)",
@@ -2567,7 +2567,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802785,
+            "ts": 1596941878633838,
             "dur": 5,
             "args": {
                 "name": "model_test/concat_2:ConcatV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int)",
@@ -2580,8 +2580,8 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802793,
-            "dur": 25,
+            "ts": 1596941878633844,
+            "dur": 24,
             "args": {
                 "name": "model_test/concat_4:ConcatV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int)",
                 "op": "unknown"
@@ -2593,7 +2593,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802820,
+            "ts": 1596941878633870,
             "dur": 21,
             "args": {
                 "name": "model_test/concat_4:ConcatV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorSlicingOp<Eigen::array<int, 2ul> const, Eigen::array<int, 2ul> const, Eigen::TensorMap<Eigen::Tensor<float, 2, 1, int>, 16, Eigen::MakePointer> >, Eigen::TensorMap<Eigen::Tensor<float const, 2, 1, int>, 16, Eigen::MakePointer> const> const, Eigen::GpuDevice>, int)",
@@ -2606,7 +2606,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246802842,
+            "ts": 1596941878633893,
             "dur": 50,
             "args": {
                 "name": "model_test/tile_by_dim/Tile:Tile#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 5, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorBroadcastingOp<Eigen::array<int, 5ul> const, Eigen::TensorMap<Eigen::Tensor<float const, 5, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 5, 1, int>, 16, Eigen::MakePointer>, Eigen::TensorBroadcastingOp<Eigen::array<int, 5ul> const, Eigen::TensorMap<Eigen::Tensor<float const, 5, 1, int>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, int)",
@@ -2619,8 +2619,8 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246807994,
-            "dur": 1451,
+            "ts": 1596941878643160,
+            "dur": 1444,
             "args": {
                 "name": "model_test/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@volta_sgemm_128x64_nn",
                 "op": "unknown"
@@ -2632,8 +2632,8 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246809447,
-            "dur": 1442,
+            "ts": 1596941878644606,
+            "dur": 1441,
             "args": {
                 "name": "model_test/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@volta_sgemm_128x64_nn",
                 "op": "unknown"
@@ -2645,7 +2645,7 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246810891,
+            "ts": 1596941878646049,
             "dur": 1443,
             "args": {
                 "name": "model_test/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@volta_sgemm_128x64_nn",
@@ -2658,8 +2658,8 @@
             "name": "unknown",
             "pid": 5,
             "tid": 0,
-            "ts": 1596819246812336,
-            "dur": 1308,
+            "ts": 1596941878647494,
+            "dur": 1309,
             "args": {
                 "name": "model_test/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@volta_sgemm_128x64_nn",
                 "op": "unknown"
@@ -2671,10 +2671,127 @@
             "name": "unknown",
             "pid": 5,
             "tid": 1,
-            "ts": 1596819246799323,
+            "ts": 1596941878621254,
+            "dur": 8,
+            "args": {
+                "name": "model_test/batch_mlp/batch_linear/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 5,
+            "tid": 1,
+            "ts": 1596941878621265,
+            "dur": 8,
+            "args": {
+                "name": "model_test/batch_mlp/batch_linear/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 5,
+            "tid": 1,
+            "ts": 1596941878621275,
+            "dur": 8,
+            "args": {
+                "name": "model_test/batch_mlp/batch_linear/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 5,
+            "tid": 1,
+            "ts": 1596941878631230,
+            "dur": 17,
+            "args": {
+                "name": "model_test/batch_mlp/batch_linear_1/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 5,
+            "tid": 1,
+            "ts": 1596941878631249,
+            "dur": 12,
+            "args": {
+                "name": "model_test/batch_mlp/batch_linear_1/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 5,
+            "tid": 1,
+            "ts": 1596941878631263,
+            "dur": 11,
+            "args": {
+                "name": "model_test/batch_mlp/batch_linear_1/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 5,
+            "tid": 1,
+            "ts": 1596941878631590,
+            "dur": 15,
+            "args": {
+                "name": "model_test/batch_mlp_1/batch_linear/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 5,
+            "tid": 1,
+            "ts": 1596941878631606,
+            "dur": 11,
+            "args": {
+                "name": "model_test/batch_mlp_1/batch_linear/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 5,
+            "tid": 1,
+            "ts": 1596941878631619,
+            "dur": 10,
+            "args": {
+                "name": "model_test/batch_mlp_1/batch_linear/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 5,
+            "tid": 1,
+            "ts": 1596941878631893,
             "dur": 9,
             "args": {
-                "name": "model_test/batch_mlp/batch_linear/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
+                "name": "model_test/batch_mlp_1/batch_linear_1/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
                 "op": "unknown"
             }
         },
@@ -2684,112 +2801,8 @@
             "name": "unknown",
             "pid": 5,
             "tid": 1,
-            "ts": 1596819246799334,
-            "dur": 8,
-            "args": {
-                "name": "model_test/batch_mlp/batch_linear/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
-                "op": "unknown"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "unknown",
-            "pid": 5,
-            "tid": 1,
-            "ts": 1596819246799344,
-            "dur": 8,
-            "args": {
-                "name": "model_test/batch_mlp/batch_linear/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
-                "op": "unknown"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "unknown",
-            "pid": 5,
-            "tid": 1,
-            "ts": 1596819246800365,
-            "dur": 8,
-            "args": {
-                "name": "model_test/batch_mlp/batch_linear_1/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
-                "op": "unknown"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "unknown",
-            "pid": 5,
-            "tid": 1,
-            "ts": 1596819246800376,
-            "dur": 9,
-            "args": {
-                "name": "model_test/batch_mlp/batch_linear_1/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
-                "op": "unknown"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "unknown",
-            "pid": 5,
-            "tid": 1,
-            "ts": 1596819246800386,
-            "dur": 8,
-            "args": {
-                "name": "model_test/batch_mlp/batch_linear_1/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
-                "op": "unknown"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "unknown",
-            "pid": 5,
-            "tid": 1,
-            "ts": 1596819246800559,
-            "dur": 8,
-            "args": {
-                "name": "model_test/batch_mlp_1/batch_linear/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
-                "op": "unknown"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "unknown",
-            "pid": 5,
-            "tid": 1,
-            "ts": 1596819246800570,
-            "dur": 8,
-            "args": {
-                "name": "model_test/batch_mlp_1/batch_linear/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
-                "op": "unknown"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "unknown",
-            "pid": 5,
-            "tid": 1,
-            "ts": 1596819246800580,
-            "dur": 8,
-            "args": {
-                "name": "model_test/batch_mlp_1/batch_linear/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
-                "op": "unknown"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "unknown",
-            "pid": 5,
-            "tid": 1,
-            "ts": 1596819246800849,
-            "dur": 8,
+            "ts": 1596941878631904,
+            "dur": 10,
             "args": {
                 "name": "model_test/batch_mlp_1/batch_linear_1/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
                 "op": "unknown"
@@ -2801,8 +2814,8 @@
             "name": "unknown",
             "pid": 5,
             "tid": 1,
-            "ts": 1596819246800859,
-            "dur": 8,
+            "ts": 1596941878631917,
+            "dur": 11,
             "args": {
                 "name": "model_test/batch_mlp_1/batch_linear_1/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
                 "op": "unknown"
@@ -2814,21 +2827,8 @@
             "name": "unknown",
             "pid": 5,
             "tid": 1,
-            "ts": 1596819246800870,
-            "dur": 8,
-            "args": {
-                "name": "model_test/batch_mlp_1/batch_linear_1/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
-                "op": "unknown"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "unknown",
-            "pid": 5,
-            "tid": 1,
-            "ts": 1596819246807248,
-            "dur": 314,
+            "ts": 1596941878642383,
+            "dur": 321,
             "args": {
                 "name": "model_test/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
                 "op": "unknown"
@@ -2840,8 +2840,8 @@
             "name": "unknown",
             "pid": 5,
             "tid": 1,
-            "ts": 1596819246807565,
-            "dur": 215,
+            "ts": 1596941878642707,
+            "dur": 231,
             "args": {
                 "name": "model_test/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
                 "op": "unknown"
@@ -2853,8 +2853,8 @@
             "name": "unknown",
             "pid": 5,
             "tid": 1,
-            "ts": 1596819246807783,
-            "dur": 209,
+            "ts": 1596941878642941,
+            "dur": 217,
             "args": {
                 "name": "model_test/MatMul:BatchMatMulV2#id=13,device=/job:localhost/replica:0/task:0/device:GPU:0,async=false#@@MemcpyHtoD",
                 "op": "unknown"
@@ -2866,8 +2866,8 @@
             "name": "unknown",
             "pid": 7,
             "tid": 0,
-            "ts": 1596819246793952,
-            "dur": 10,
+            "ts": 1596941878615350,
+            "dur": 11,
             "args": {
                 "name": "model_test/MatMul/_1:_Recv",
                 "op": "unknown"
@@ -2879,8 +2879,8 @@
             "name": "NoOp",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246793901,
-            "dur": 40,
+            "ts": 1596941878615272,
+            "dur": 48,
             "args": {
                 "name": "_SOURCE",
                 "op": "NoOp"
@@ -2892,10 +2892,36 @@
             "name": "Const",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246793978,
-            "dur": 16,
+            "ts": 1596941878615432,
+            "dur": 42,
             "args": {
-                "name": "model_test/batch_mlp/batch_linear/ExpandDims",
+                "name": "model_test/mul_12/y",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VariableV2",
+            "pid": 9,
+            "tid": 0,
+            "ts": 1596941878615477,
+            "dur": 13,
+            "args": {
+                "name": "model_test/batch_mlp_1/batch_linear_1/weights",
+                "op": "VariableV2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 9,
+            "tid": 0,
+            "ts": 1596941878615493,
+            "dur": 6,
+            "args": {
+                "name": "model_test/stack_1",
                 "op": "Const"
             }
         },
@@ -2905,21 +2931,21 @@
             "name": "Const",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246793996,
-            "dur": 5,
-            "args": {
-                "name": "model_test/concat_2/axis",
-                "op": "Const"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "Const",
-            "pid": 9,
-            "tid": 0,
-            "ts": 1596819246794002,
+            "ts": 1596941878615500,
             "dur": 3,
+            "args": {
+                "name": "model_test/add_6/y",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 9,
+            "tid": 0,
+            "ts": 1596941878615505,
+            "dur": 4,
             "args": {
                 "name": "model_test/Reshape_7/shape",
                 "op": "Const"
@@ -2928,10 +2954,75 @@
         {
             "ph": "X",
             "cat": "Op",
+            "name": "VariableV2",
+            "pid": 9,
+            "tid": 0,
+            "ts": 1596941878615510,
+            "dur": 5,
+            "args": {
+                "name": "model_test/batch_mlp/batch_linear_1/add/b",
+                "op": "VariableV2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
             "name": "Const",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246794006,
+            "ts": 1596941878615517,
+            "dur": 4,
+            "args": {
+                "name": "model_test/Const",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 9,
+            "tid": 0,
+            "ts": 1596941878615522,
+            "dur": 4,
+            "args": {
+                "name": "model_test/concat_1/axis",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VariableV2",
+            "pid": 9,
+            "tid": 0,
+            "ts": 1596941878615527,
+            "dur": 4,
+            "args": {
+                "name": "model_test/batch_mlp_1/batch_linear/weights",
+                "op": "VariableV2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 9,
+            "tid": 0,
+            "ts": 1596941878615533,
+            "dur": 2,
+            "args": {
+                "name": "model_test/Reshape_1/shape",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 9,
+            "tid": 0,
+            "ts": 1596941878615537,
             "dur": 4,
             "args": {
                 "name": "model_test/stack",
@@ -2944,47 +3035,8 @@
             "name": "Const",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246794011,
+            "ts": 1596941878615542,
             "dur": 4,
-            "args": {
-                "name": "model_test/concat_1/axis",
-                "op": "Const"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "Const",
-            "pid": 9,
-            "tid": 0,
-            "ts": 1596819246794016,
-            "dur": 4,
-            "args": {
-                "name": "model_test/mul_12/y",
-                "op": "Const"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "Const",
-            "pid": 9,
-            "tid": 0,
-            "ts": 1596819246794021,
-            "dur": 3,
-            "args": {
-                "name": "model_test/Const",
-                "op": "Const"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "Const",
-            "pid": 9,
-            "tid": 0,
-            "ts": 1596819246794025,
-            "dur": 3,
             "args": {
                 "name": "model_test/ones_1",
                 "op": "Const"
@@ -2996,8 +3048,21 @@
             "name": "Const",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246794029,
+            "ts": 1596941878615547,
             "dur": 3,
+            "args": {
+                "name": "model_test/tile_by_dim/Tile/multiples",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 9,
+            "tid": 0,
+            "ts": 1596941878615551,
+            "dur": 4,
             "args": {
                 "name": "model_test/Reshape_6/shape",
                 "op": "Const"
@@ -3006,40 +3071,53 @@
         {
             "ph": "X",
             "cat": "Op",
+            "name": "Const",
+            "pid": 9,
+            "tid": 0,
+            "ts": 1596941878615556,
+            "dur": 3,
+            "args": {
+                "name": "model_test/concat_2/axis",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 9,
+            "tid": 0,
+            "ts": 1596941878615560,
+            "dur": 3,
+            "args": {
+                "name": "model_test/Reshape_2/shape",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
             "name": "VariableV2",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246794033,
-            "dur": 10,
+            "ts": 1596941878615564,
+            "dur": 5,
             "args": {
-                "name": "model_test/batch_mlp_1/batch_linear/weights",
+                "name": "model_test/cpr_static",
                 "op": "VariableV2"
             }
         },
         {
             "ph": "X",
             "cat": "Op",
-            "name": "Const",
+            "name": "VariableV2",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246794045,
-            "dur": 4,
+            "ts": 1596941878615571,
+            "dur": 3,
             "args": {
-                "name": "model_test/Reshape_1/shape",
-                "op": "Const"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "Const",
-            "pid": 9,
-            "tid": 0,
-            "ts": 1596819246794050,
-            "dur": 4,
-            "args": {
-                "name": "model_test/stack_1",
-                "op": "Const"
+                "name": "model_test/batch_mlp/batch_linear/weights",
+                "op": "VariableV2"
             }
         },
         {
@@ -3048,7 +3126,7 @@
             "name": "VariableV2",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246794055,
+            "ts": 1596941878615576,
             "dur": 4,
             "args": {
                 "name": "model_test/batch_mlp/batch_linear_1/weights",
@@ -3061,59 +3139,7 @@
             "name": "Const",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246794061,
-            "dur": 2,
-            "args": {
-                "name": "model_test/tile_by_dim/Tile/multiples",
-                "op": "Const"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "VariableV2",
-            "pid": 9,
-            "tid": 0,
-            "ts": 1596819246794064,
-            "dur": 4,
-            "args": {
-                "name": "model_test/batch_mlp/batch_linear/add/b",
-                "op": "VariableV2"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "Const",
-            "pid": 9,
-            "tid": 0,
-            "ts": 1596819246794069,
-            "dur": 3,
-            "args": {
-                "name": "model_test/Reshape_2/shape",
-                "op": "Const"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "Const",
-            "pid": 9,
-            "tid": 0,
-            "ts": 1596819246794073,
-            "dur": 4,
-            "args": {
-                "name": "model_test/add_6/y",
-                "op": "Const"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "Const",
-            "pid": 9,
-            "tid": 0,
-            "ts": 1596819246794078,
+            "ts": 1596941878615582,
             "dur": 3,
             "args": {
                 "name": "model_test/mul_15/y",
@@ -3123,53 +3149,14 @@
         {
             "ph": "X",
             "cat": "Op",
-            "name": "VariableV2",
+            "name": "Const",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246794082,
-            "dur": 5,
-            "args": {
-                "name": "model_test/batch_mlp/batch_linear/weights",
-                "op": "VariableV2"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "VariableV2",
-            "pid": 9,
-            "tid": 0,
-            "ts": 1596819246794088,
+            "ts": 1596941878615586,
             "dur": 4,
             "args": {
-                "name": "model_test/batch_mlp/batch_linear_1/add/b",
-                "op": "VariableV2"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "VariableV2",
-            "pid": 9,
-            "tid": 0,
-            "ts": 1596819246794093,
-            "dur": 4,
-            "args": {
-                "name": "model_test/batch_mlp_1/batch_linear/add/b",
-                "op": "VariableV2"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "VariableV2",
-            "pid": 9,
-            "tid": 0,
-            "ts": 1596819246794098,
-            "dur": 4,
-            "args": {
-                "name": "model_test/cpr_static",
-                "op": "VariableV2"
+                "name": "model_test/batch_mlp/batch_linear/ExpandDims",
+                "op": "Const"
             }
         },
         {
@@ -3178,8 +3165,8 @@
             "name": "Const",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246794104,
-            "dur": 3,
+            "ts": 1596941878615591,
+            "dur": 4,
             "args": {
                 "name": "model_test/batch_mlp/batch_linear/tile_by_dim/Tile/multiples",
                 "op": "Const"
@@ -3191,10 +3178,23 @@
             "name": "VariableV2",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246794108,
-            "dur": 4,
+            "ts": 1596941878615597,
+            "dur": 3,
             "args": {
-                "name": "model_test/batch_mlp_1/batch_linear_1/weights",
+                "name": "model_test/batch_mlp/batch_linear/add/b",
+                "op": "VariableV2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VariableV2",
+            "pid": 9,
+            "tid": 0,
+            "ts": 1596941878615602,
+            "dur": 3,
+            "args": {
+                "name": "model_test/batch_mlp_1/batch_linear/add/b",
                 "op": "VariableV2"
             }
         },
@@ -3204,12 +3204,12 @@
             "name": "Identity",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246794113,
+            "ts": 1596941878615607,
             "dur": 4,
             "args": {
-                "name": "model_test/batch_mlp_1/batch_linear/weights/read",
+                "name": "model_test/batch_mlp_1/batch_linear_1/weights/read",
                 "op": "Identity",
-                "input0": "model_test/batch_mlp_1/batch_linear/weights"
+                "input0": "model_test/batch_mlp_1/batch_linear_1/weights"
             }
         },
         {
@@ -3218,49 +3218,7 @@
             "name": "Identity",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246794119,
-            "dur": 4,
-            "args": {
-                "name": "model_test/batch_mlp/batch_linear_1/weights/read",
-                "op": "Identity",
-                "input0": "model_test/batch_mlp/batch_linear_1/weights"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "Identity",
-            "pid": 9,
-            "tid": 0,
-            "ts": 1596819246794125,
-            "dur": 2,
-            "args": {
-                "name": "model_test/batch_mlp/batch_linear/add/b/read",
-                "op": "Identity",
-                "input0": "model_test/batch_mlp/batch_linear/add/b"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "Identity",
-            "pid": 9,
-            "tid": 0,
-            "ts": 1596819246794129,
-            "dur": 2,
-            "args": {
-                "name": "model_test/batch_mlp/batch_linear/weights/read",
-                "op": "Identity",
-                "input0": "model_test/batch_mlp/batch_linear/weights"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "Identity",
-            "pid": 9,
-            "tid": 0,
-            "ts": 1596819246794133,
+            "ts": 1596941878615614,
             "dur": 3,
             "args": {
                 "name": "model_test/batch_mlp/batch_linear_1/add/b/read",
@@ -3274,12 +3232,12 @@
             "name": "Identity",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246794137,
-            "dur": 3,
+            "ts": 1596941878615619,
+            "dur": 2,
             "args": {
-                "name": "model_test/batch_mlp_1/batch_linear/add/b/read",
+                "name": "model_test/batch_mlp_1/batch_linear/weights/read",
                 "op": "Identity",
-                "input0": "model_test/batch_mlp_1/batch_linear/add/b"
+                "input0": "model_test/batch_mlp_1/batch_linear/weights"
             }
         },
         {
@@ -3288,7 +3246,7 @@
             "name": "Identity",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246794141,
+            "ts": 1596941878615624,
             "dur": 3,
             "args": {
                 "name": "model_test/cpr_static/read",
@@ -3302,12 +3260,54 @@
             "name": "Identity",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246794145,
+            "ts": 1596941878615628,
+            "dur": 4,
+            "args": {
+                "name": "model_test/batch_mlp/batch_linear/weights/read",
+                "op": "Identity",
+                "input0": "model_test/batch_mlp/batch_linear/weights"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Identity",
+            "pid": 9,
+            "tid": 0,
+            "ts": 1596941878615634,
             "dur": 2,
             "args": {
-                "name": "model_test/batch_mlp_1/batch_linear_1/weights/read",
+                "name": "model_test/batch_mlp/batch_linear_1/weights/read",
                 "op": "Identity",
-                "input0": "model_test/batch_mlp_1/batch_linear_1/weights"
+                "input0": "model_test/batch_mlp/batch_linear_1/weights"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Identity",
+            "pid": 9,
+            "tid": 0,
+            "ts": 1596941878615638,
+            "dur": 3,
+            "args": {
+                "name": "model_test/batch_mlp/batch_linear/add/b/read",
+                "op": "Identity",
+                "input0": "model_test/batch_mlp/batch_linear/add/b"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Identity",
+            "pid": 9,
+            "tid": 0,
+            "ts": 1596941878615643,
+            "dur": 2,
+            "args": {
+                "name": "model_test/batch_mlp_1/batch_linear/add/b/read",
+                "op": "Identity",
+                "input0": "model_test/batch_mlp_1/batch_linear/add/b"
             }
         },
         {
@@ -3316,8 +3316,23 @@
             "name": "Tile",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246794149,
-            "dur": 1093,
+            "ts": 1596941878615648,
+            "dur": 1505,
+            "args": {
+                "name": "model_test/batch_mlp_1/batch_linear_1/tile_by_dim/Tile",
+                "op": "Tile",
+                "input0": "model_test/batch_mlp_1/batch_linear_1/weights/read",
+                "input1": "model_test/batch_mlp/batch_linear/tile_by_dim/Tile/multiples"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Tile",
+            "pid": 9,
+            "tid": 0,
+            "ts": 1596941878617172,
+            "dur": 32,
             "args": {
                 "name": "model_test/batch_mlp_1/batch_linear/tile_by_dim/Tile",
                 "op": "Tile",
@@ -3331,23 +3346,8 @@
             "name": "Tile",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246795257,
-            "dur": 26,
-            "args": {
-                "name": "model_test/batch_mlp/batch_linear_1/tile_by_dim/Tile",
-                "op": "Tile",
-                "input0": "model_test/batch_mlp/batch_linear_1/weights/read",
-                "input1": "model_test/batch_mlp/batch_linear/tile_by_dim/Tile/multiples"
-            }
-        },
-        {
-            "ph": "X",
-            "cat": "Op",
-            "name": "Tile",
-            "pid": 9,
-            "tid": 0,
-            "ts": 1596819246795287,
-            "dur": 19,
+            "ts": 1596941878617209,
+            "dur": 21,
             "args": {
                 "name": "model_test/batch_mlp/batch_linear/tile_by_dim/Tile",
                 "op": "Tile",
@@ -3361,12 +3361,12 @@
             "name": "Tile",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246795310,
-            "dur": 18,
+            "ts": 1596941878617235,
+            "dur": 29,
             "args": {
-                "name": "model_test/batch_mlp_1/batch_linear_1/tile_by_dim/Tile",
+                "name": "model_test/batch_mlp/batch_linear_1/tile_by_dim/Tile",
                 "op": "Tile",
-                "input0": "model_test/batch_mlp_1/batch_linear_1/weights/read",
+                "input0": "model_test/batch_mlp/batch_linear_1/weights/read",
                 "input1": "model_test/batch_mlp/batch_linear/tile_by_dim/Tile/multiples"
             }
         },
@@ -3376,8 +3376,8 @@
             "name": "BatchMatMulV2",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246795332,
-            "dur": 405,
+            "ts": 1596941878617269,
+            "dur": 392,
             "args": {
                 "name": "model_test/batch_mlp/batch_linear/MatMul",
                 "op": "BatchMatMulV2",
@@ -3391,8 +3391,8 @@
             "name": "Squeeze",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246795745,
-            "dur": 1011,
+            "ts": 1596941878617668,
+            "dur": 12857,
             "args": {
                 "name": "model_test/batch_mlp/batch_linear/Squeeze",
                 "op": "Squeeze",
@@ -3405,8 +3405,8 @@
             "name": "AddV2",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246796758,
-            "dur": 37,
+            "ts": 1596941878630537,
+            "dur": 108,
             "args": {
                 "name": "model_test/batch_mlp/batch_linear/add/add",
                 "op": "AddV2",
@@ -3420,8 +3420,8 @@
             "name": "Relu",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246796798,
-            "dur": 21,
+            "ts": 1596941878630652,
+            "dur": 51,
             "args": {
                 "name": "model_test/batch_mlp/Relu",
                 "op": "Relu",
@@ -3434,8 +3434,8 @@
             "name": "ExpandDims",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246796822,
-            "dur": 4,
+            "ts": 1596941878630708,
+            "dur": 15,
             "args": {
                 "name": "model_test/batch_mlp/batch_linear_1/ExpandDims",
                 "op": "ExpandDims",
@@ -3449,8 +3449,8 @@
             "name": "BatchMatMulV2",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246796828,
-            "dur": 310,
+            "ts": 1596941878630727,
+            "dur": 556,
             "args": {
                 "name": "model_test/batch_mlp/batch_linear_1/MatMul",
                 "op": "BatchMatMulV2",
@@ -3464,8 +3464,8 @@
             "name": "Squeeze",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246797145,
-            "dur": 7,
+            "ts": 1596941878631291,
+            "dur": 8,
             "args": {
                 "name": "model_test/batch_mlp/batch_linear_1/Squeeze",
                 "op": "Squeeze",
@@ -3478,8 +3478,8 @@
             "name": "AddV2",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246797153,
-            "dur": 21,
+            "ts": 1596941878631301,
+            "dur": 20,
             "args": {
                 "name": "model_test/batch_mlp/batch_linear_1/add/add",
                 "op": "AddV2",
@@ -3493,8 +3493,8 @@
             "name": "ConcatV2",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246797176,
-            "dur": 36,
+            "ts": 1596941878631324,
+            "dur": 35,
             "args": {
                 "name": "model_test/concat",
                 "op": "ConcatV2",
@@ -3509,7 +3509,7 @@
             "name": "ExpandDims",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246797216,
+            "ts": 1596941878631363,
             "dur": 4,
             "args": {
                 "name": "model_test/batch_mlp_1/batch_linear/ExpandDims",
@@ -3524,8 +3524,8 @@
             "name": "BatchMatMulV2",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246797221,
-            "dur": 271,
+            "ts": 1596941878631369,
+            "dur": 251,
             "args": {
                 "name": "model_test/batch_mlp_1/batch_linear/MatMul",
                 "op": "BatchMatMulV2",
@@ -3539,7 +3539,7 @@
             "name": "Squeeze",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246797499,
+            "ts": 1596941878631626,
             "dur": 6,
             "args": {
                 "name": "model_test/batch_mlp_1/batch_linear/Squeeze",
@@ -3553,8 +3553,8 @@
             "name": "AddV2",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246797507,
-            "dur": 20,
+            "ts": 1596941878631634,
+            "dur": 19,
             "args": {
                 "name": "model_test/batch_mlp_1/batch_linear/add/add",
                 "op": "AddV2",
@@ -3568,8 +3568,8 @@
             "name": "Relu",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246797530,
-            "dur": 17,
+            "ts": 1596941878631656,
+            "dur": 15,
             "args": {
                 "name": "model_test/batch_mlp_1/Relu",
                 "op": "Relu",
@@ -3582,7 +3582,7 @@
             "name": "ExpandDims",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246797548,
+            "ts": 1596941878631673,
             "dur": 4,
             "args": {
                 "name": "model_test/batch_mlp_1/batch_linear_1/ExpandDims",
@@ -3597,8 +3597,8 @@
             "name": "BatchMatMulV2",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246797554,
-            "dur": 244,
+            "ts": 1596941878631679,
+            "dur": 238,
             "args": {
                 "name": "model_test/batch_mlp_1/batch_linear_1/MatMul",
                 "op": "BatchMatMulV2",
@@ -3612,7 +3612,7 @@
             "name": "Squeeze",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246797804,
+            "ts": 1596941878631924,
             "dur": 5,
             "args": {
                 "name": "model_test/batch_mlp_1/batch_linear_1/Squeeze",
@@ -3626,7 +3626,7 @@
             "name": "SplitV",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246797811,
+            "ts": 1596941878631932,
             "dur": 73,
             "args": {
                 "name": "model_test/split",
@@ -3642,7 +3642,7 @@
             "name": "Reshape",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246797888,
+            "ts": 1596941878632009,
             "dur": 5,
             "args": {
                 "name": "model_test/Reshape_1",
@@ -3657,8 +3657,8 @@
             "name": "Reshape",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246797895,
-            "dur": 2,
+            "ts": 1596941878632016,
+            "dur": 3,
             "args": {
                 "name": "model_test/Reshape_2",
                 "op": "Reshape",
@@ -3672,8 +3672,8 @@
             "name": "AddV2",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246797899,
-            "dur": 17,
+            "ts": 1596941878632021,
+            "dur": 16,
             "args": {
                 "name": "model_test/add_5",
                 "op": "AddV2",
@@ -3687,7 +3687,7 @@
             "name": "Split",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246797918,
+            "ts": 1596941878632040,
             "dur": 24,
             "args": {
                 "name": "model_test/split_1",
@@ -3702,8 +3702,8 @@
             "name": "Split",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246797946,
-            "dur": 22,
+            "ts": 1596941878632069,
+            "dur": 21,
             "args": {
                 "name": "model_test/split_2",
                 "op": "Split",
@@ -3717,7 +3717,7 @@
             "name": "Sigmoid",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246797972,
+            "ts": 1596941878632094,
             "dur": 18,
             "args": {
                 "name": "model_test/Sigmoid",
@@ -3731,8 +3731,8 @@
             "name": "Sigmoid",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246797992,
-            "dur": 14,
+            "ts": 1596941878632115,
+            "dur": 13,
             "args": {
                 "name": "model_test/Sigmoid_1",
                 "op": "Sigmoid",
@@ -3745,8 +3745,8 @@
             "name": "Mul",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798008,
-            "dur": 20,
+            "ts": 1596941878632131,
+            "dur": 17,
             "args": {
                 "name": "model_test/mul_3",
                 "op": "Mul",
@@ -3760,8 +3760,8 @@
             "name": "Mul",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798030,
-            "dur": 15,
+            "ts": 1596941878632151,
+            "dur": 14,
             "args": {
                 "name": "model_test/mul_2",
                 "op": "Mul",
@@ -3775,7 +3775,7 @@
             "name": "Mul",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798047,
+            "ts": 1596941878632168,
             "dur": 14,
             "args": {
                 "name": "model_test/mul",
@@ -3790,8 +3790,8 @@
             "name": "Mul",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798064,
-            "dur": 16,
+            "ts": 1596941878632185,
+            "dur": 15,
             "args": {
                 "name": "model_test/mul_1",
                 "op": "Mul",
@@ -3805,8 +3805,8 @@
             "name": "Sigmoid",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798082,
-            "dur": 14,
+            "ts": 1596941878632203,
+            "dur": 13,
             "args": {
                 "name": "model_test/Sigmoid_2",
                 "op": "Sigmoid",
@@ -3819,8 +3819,8 @@
             "name": "Sigmoid",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798098,
-            "dur": 13,
+            "ts": 1596941878632219,
+            "dur": 14,
             "args": {
                 "name": "model_test/Sigmoid_3",
                 "op": "Sigmoid",
@@ -3833,8 +3833,8 @@
             "name": "Mul",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798113,
-            "dur": 15,
+            "ts": 1596941878632235,
+            "dur": 21,
             "args": {
                 "name": "model_test/mul_15",
                 "op": "Mul",
@@ -3848,7 +3848,7 @@
             "name": "Mul",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798130,
+            "ts": 1596941878632258,
             "dur": 16,
             "args": {
                 "name": "model_test/mul_14",
@@ -3863,7 +3863,7 @@
             "name": "Mul",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798148,
+            "ts": 1596941878632276,
             "dur": 14,
             "args": {
                 "name": "model_test/mul_12",
@@ -3878,8 +3878,8 @@
             "name": "Mul",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798164,
-            "dur": 15,
+            "ts": 1596941878632293,
+            "dur": 14,
             "args": {
                 "name": "model_test/mul_13",
                 "op": "Mul",
@@ -3893,7 +3893,7 @@
             "name": "AddV2",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798181,
+            "ts": 1596941878632309,
             "dur": 18,
             "args": {
                 "name": "model_test/add",
@@ -3908,7 +3908,7 @@
             "name": "AddV2",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798202,
+            "ts": 1596941878632329,
             "dur": 14,
             "args": {
                 "name": "model_test/add_1",
@@ -3923,8 +3923,8 @@
             "name": "Cos",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798218,
-            "dur": 20,
+            "ts": 1596941878632345,
+            "dur": 17,
             "args": {
                 "name": "model_test/Cos",
                 "op": "Cos",
@@ -3937,8 +3937,8 @@
             "name": "Sin",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798240,
-            "dur": 19,
+            "ts": 1596941878632365,
+            "dur": 18,
             "args": {
                 "name": "model_test/Sin",
                 "op": "Sin",
@@ -3951,7 +3951,7 @@
             "name": "Tanh",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798261,
+            "ts": 1596941878632385,
             "dur": 18,
             "args": {
                 "name": "model_test/Tanh_2",
@@ -3965,8 +3965,8 @@
             "name": "Tanh",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798281,
-            "dur": 14,
+            "ts": 1596941878632405,
+            "dur": 13,
             "args": {
                 "name": "model_test/Tanh",
                 "op": "Tanh",
@@ -3979,7 +3979,7 @@
             "name": "Tanh",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798297,
+            "ts": 1596941878632420,
             "dur": 14,
             "args": {
                 "name": "model_test/Tanh_1",
@@ -3993,8 +3993,8 @@
             "name": "AddV2",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798312,
-            "dur": 15,
+            "ts": 1596941878632436,
+            "dur": 14,
             "args": {
                 "name": "model_test/add_6",
                 "op": "AddV2",
@@ -4008,8 +4008,8 @@
             "name": "AddV2",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798328,
-            "dur": 15,
+            "ts": 1596941878632453,
+            "dur": 14,
             "args": {
                 "name": "model_test/add_7",
                 "op": "AddV2",
@@ -4023,8 +4023,8 @@
             "name": "Cos",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798345,
-            "dur": 14,
+            "ts": 1596941878632469,
+            "dur": 15,
             "args": {
                 "name": "model_test/Cos_1",
                 "op": "Cos",
@@ -4037,8 +4037,8 @@
             "name": "Sin",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798363,
-            "dur": 22,
+            "ts": 1596941878632488,
+            "dur": 13,
             "args": {
                 "name": "model_test/Sin_1",
                 "op": "Sin",
@@ -4051,7 +4051,7 @@
             "name": "Tanh",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798387,
+            "ts": 1596941878632503,
             "dur": 14,
             "args": {
                 "name": "model_test/Tanh_5",
@@ -4065,7 +4065,7 @@
             "name": "Tanh",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798403,
+            "ts": 1596941878632519,
             "dur": 13,
             "args": {
                 "name": "model_test/Tanh_3",
@@ -4079,7 +4079,7 @@
             "name": "Tanh",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798417,
+            "ts": 1596941878632533,
             "dur": 14,
             "args": {
                 "name": "model_test/Tanh_4",
@@ -4093,8 +4093,8 @@
             "name": "Neg",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798433,
-            "dur": 18,
+            "ts": 1596941878632548,
+            "dur": 17,
             "args": {
                 "name": "model_test/Neg",
                 "op": "Neg",
@@ -4107,7 +4107,7 @@
             "name": "Mul",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798454,
+            "ts": 1596941878632567,
             "dur": 17,
             "args": {
                 "name": "model_test/mul_4",
@@ -4122,8 +4122,8 @@
             "name": "Mul",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798472,
-            "dur": 15,
+            "ts": 1596941878632586,
+            "dur": 14,
             "args": {
                 "name": "model_test/mul_11",
                 "op": "Mul",
@@ -4137,7 +4137,7 @@
             "name": "Mul",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798489,
+            "ts": 1596941878632602,
             "dur": 16,
             "args": {
                 "name": "model_test/mul_10",
@@ -4152,7 +4152,7 @@
             "name": "Mul",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798507,
+            "ts": 1596941878632620,
             "dur": 14,
             "args": {
                 "name": "model_test/mul_5",
@@ -4167,8 +4167,8 @@
             "name": "Neg",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798524,
-            "dur": 15,
+            "ts": 1596941878632636,
+            "dur": 14,
             "args": {
                 "name": "model_test/Neg_1",
                 "op": "Neg",
@@ -4181,8 +4181,8 @@
             "name": "Mul",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798543,
-            "dur": 15,
+            "ts": 1596941878632654,
+            "dur": 13,
             "args": {
                 "name": "model_test/mul_16",
                 "op": "Mul",
@@ -4196,7 +4196,7 @@
             "name": "Mul",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798559,
+            "ts": 1596941878632669,
             "dur": 15,
             "args": {
                 "name": "model_test/mul_23",
@@ -4211,7 +4211,7 @@
             "name": "Mul",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798577,
+            "ts": 1596941878632686,
             "dur": 15,
             "args": {
                 "name": "model_test/mul_22",
@@ -4226,8 +4226,8 @@
             "name": "Mul",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798594,
-            "dur": 15,
+            "ts": 1596941878632703,
+            "dur": 14,
             "args": {
                 "name": "model_test/mul_17",
                 "op": "Mul",
@@ -4241,7 +4241,7 @@
             "name": "Mul",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798611,
+            "ts": 1596941878632720,
             "dur": 13,
             "args": {
                 "name": "model_test/mul_7",
@@ -4256,8 +4256,8 @@
             "name": "Mul",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798626,
-            "dur": 13,
+            "ts": 1596941878632735,
+            "dur": 14,
             "args": {
                 "name": "model_test/mul_6",
                 "op": "Mul",
@@ -4271,7 +4271,7 @@
             "name": "Mul",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798641,
+            "ts": 1596941878632751,
             "dur": 14,
             "args": {
                 "name": "model_test/mul_9",
@@ -4286,7 +4286,7 @@
             "name": "Mul",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798657,
+            "ts": 1596941878632767,
             "dur": 14,
             "args": {
                 "name": "model_test/mul_19",
@@ -4301,7 +4301,7 @@
             "name": "Mul",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798673,
+            "ts": 1596941878632782,
             "dur": 13,
             "args": {
                 "name": "model_test/mul_18",
@@ -4316,8 +4316,8 @@
             "name": "Mul",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798688,
-            "dur": 15,
+            "ts": 1596941878632797,
+            "dur": 14,
             "args": {
                 "name": "model_test/mul_21",
                 "op": "Mul",
@@ -4331,7 +4331,7 @@
             "name": "AddV2",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798705,
+            "ts": 1596941878632813,
             "dur": 17,
             "args": {
                 "name": "model_test/add_2",
@@ -4346,8 +4346,8 @@
             "name": "AddV2",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798723,
-            "dur": 15,
+            "ts": 1596941878632831,
+            "dur": 16,
             "args": {
                 "name": "model_test/add_3",
                 "op": "AddV2",
@@ -4361,7 +4361,7 @@
             "name": "AddV2",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798739,
+            "ts": 1596941878632849,
             "dur": 15,
             "args": {
                 "name": "model_test/add_8",
@@ -4376,7 +4376,7 @@
             "name": "AddV2",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798755,
+            "ts": 1596941878632866,
             "dur": 15,
             "args": {
                 "name": "model_test/add_9",
@@ -4391,8 +4391,8 @@
             "name": "ConcatV2",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798772,
-            "dur": 69,
+            "ts": 1596941878632883,
+            "dur": 65,
             "args": {
                 "name": "model_test/concat_1",
                 "op": "ConcatV2",
@@ -4411,8 +4411,8 @@
             "name": "ConcatV2",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798845,
-            "dur": 67,
+            "ts": 1596941878632952,
+            "dur": 64,
             "args": {
                 "name": "model_test/concat_3",
                 "op": "ConcatV2",
@@ -4431,7 +4431,7 @@
             "name": "Reshape",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798915,
+            "ts": 1596941878633020,
             "dur": 4,
             "args": {
                 "name": "model_test/Reshape_6",
@@ -4446,7 +4446,7 @@
             "name": "Reshape",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798921,
+            "ts": 1596941878633026,
             "dur": 3,
             "args": {
                 "name": "model_test/Reshape_7",
@@ -4461,7 +4461,7 @@
             "name": "ConcatV2",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798926,
+            "ts": 1596941878633030,
             "dur": 26,
             "args": {
                 "name": "model_test/concat_2",
@@ -4477,8 +4477,8 @@
             "name": "ConcatV2",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798956,
-            "dur": 25,
+            "ts": 1596941878633059,
+            "dur": 26,
             "args": {
                 "name": "model_test/concat_4",
                 "op": "ConcatV2",
@@ -4493,8 +4493,8 @@
             "name": "Tile",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246798985,
-            "dur": 21,
+            "ts": 1596941878633089,
+            "dur": 22,
             "args": {
                 "name": "model_test/tile_by_dim/Tile",
                 "op": "Tile",
@@ -4508,8 +4508,8 @@
             "name": "BatchMatMulV2",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246799009,
-            "dur": 8956,
+            "ts": 1596941878633114,
+            "dur": 9993,
             "args": {
                 "name": "model_test/MatMul",
                 "op": "BatchMatMulV2",
@@ -4523,8 +4523,8 @@
             "name": "NoOp",
             "pid": 11,
             "tid": 0,
-            "ts": 1596819246793901,
-            "dur": 27,
+            "ts": 1596941878615231,
+            "dur": 78,
             "args": {
                 "name": "_SOURCE",
                 "op": "NoOp"
@@ -4536,7 +4536,7 @@
             "name": "_Retval",
             "pid": 11,
             "tid": 0,
-            "ts": 1596819246814480,
+            "ts": 1596941878649607,
             "dur": 5,
             "args": {
                 "name": "_retval_model_test/MatMul_0_0",
@@ -4550,7 +4550,7 @@
             "name": "model_test/MatMul",
             "pid": 9,
             "tid": 0,
-            "ts": 1596819246807965,
+            "ts": 1596941878643107,
             "id": 0
         },
         {
@@ -4559,7 +4559,7 @@
             "name": "model_test/MatMul",
             "pid": 11,
             "tid": 0,
-            "ts": 1596819246814480,
+            "ts": 1596941878649607,
             "id": 0
         }
     ]

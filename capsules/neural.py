@@ -76,6 +76,8 @@ class BatchLinear(snt.AbstractModule):
     weights = snt.TileByDim(self._tile_dims, tiles)(weights)
 
     x = tf.expand_dims(x, -2)
+    print(x.shape)
+    print(weights.shape)
     y = tf.matmul(x, weights)
     y = tf.squeeze(y, -2)
 
@@ -117,12 +119,13 @@ class BatchMLP(snt.AbstractModule):
 
     h = x
     print('loop')
-    print(self._n_hiddens[:-1])
+    print(self._n_hiddens)
+    print('linear1')
     for n_hidden in self._n_hiddens[:-1]:
       layer = BatchLinear(n_hidden, initializers=self._initializers,
                           use_bias=True)
       h = self._activation(layer(h))
-
+    print('linear2')
     layer = BatchLinear(self._n_hiddens[-1], initializers=self._initializers,
                         use_bias=self._use_bias)
     h = layer(h)
