@@ -28,6 +28,7 @@ from scipy.optimize import linear_sum_assignment
 import sklearn.cluster
 import tensorflow as tf
 from tensorflow.python.client import timeline
+import time
 
 def bipartite_match(pred, gt, n_classes=None, presence=None):
     """Does maximum biprartite matching between `pred` and `gt`."""
@@ -96,7 +97,9 @@ def collect_results(sess, tensors, n_batches):
                 f.write(ctf)
             print('')
         else:
+            print(time.time())
             vals = sess.run(tensors)
+            print(time.time())
 
         for k, v in vals.items():
             res[k].append(v)
