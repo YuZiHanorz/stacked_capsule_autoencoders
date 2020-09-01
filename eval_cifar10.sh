@@ -18,10 +18,10 @@ set -x
 
 export PYTHONPATH=$PYTHONPATH:/work/07521/zhyu1214/maverick2/Capsule
 #source stacked_capsule_autoencoders/setup_virtualenv.sh
-python -m stacked_capsule_autoencoders.eval_mnist_model\
+python -m stacked_capsule_autoencoders.test2\
   --dataset=cifar10\
   --snapshot=stacked_capsule_autoencoders/checkpoints/cifar10/model.ckpt-300001\
-  --batch_size=300\
+  --batch_size=200\
   --canvas_size=32\
   --template_size=14\
   --n_part_caps=32\

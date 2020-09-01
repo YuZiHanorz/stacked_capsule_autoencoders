@@ -51,7 +51,8 @@ def _collect_results(sess, tensors, dataset, n_batches):
 
     for i in range(n_batches):
         print('\rCollecting: {}/{}'.format(i + 1, n_batches), end='')
-        sess.run(tensors)
+        if i == 20:
+            sess.run(tensors)
 
 
 def main(_=None):
