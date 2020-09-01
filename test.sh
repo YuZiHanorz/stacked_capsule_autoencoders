@@ -18,9 +18,9 @@ set -x
 
 export PYTHONPATH=$PYTHONPATH:/work/07521/zhyu1214/maverick2/Capsule
 #source stacked_capsule_autoencoders/setup_virtualenv.sh
-python -m stacked_capsule_autoencoders.test\
+python -m stacked_capsule_autoencoders.test2\
   --snapshot=stacked_capsule_autoencoders/checkpoints/mnist/model.ckpt-300001\
-  --batch_size=200\
+  --batch_size=32\
   --canvas_size=40\
   --n_part_caps=40\
   --n_obj_caps=32\
