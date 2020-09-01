@@ -1,84 +1,112 @@
+# coding=utf-8
+# Copyright 2019 The Google Research Authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+r"""Evaluation script."""
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+
+import os.path as osp
+import pdb
+import sys
+import traceback
+
+from absl import flags
+from absl import logging
+from monty.collections import AttrDict
+import sklearn.cluster
 import tensorflow as tf
-from tensorflow.python.client import timeline
 
-with tf.device('/gpu:0'):
-    x = tf.random_normal([200, 32, 40, 3, 3])
-    y = tf.random_normal([200, 32, 40, 3, 3])
-    res = tf.matmul(x, y)
+from stacked_capsule_autoencoders.capsules.configs import data_config
+from stacked_capsule_autoencoders.capsules.configs import model_config
+from stacked_capsule_autoencoders.capsules.eval import cluster_classify
+from stacked_capsule_autoencoders.capsules.eval import collect_results
+from stacked_capsule_autoencoders.capsules.plot import make_tsne_plot
+from stacked_capsule_autoencoders.capsules.train import tools
+from stacked_capsule_autoencoders.capsules import capsule as _capsule
 
-# Run the graph with full trace option
-with tf.Session() as sess:
-    run_options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE)
-    run_metadata = tf.RunMetadata()
-    sess.run(res, options=run_options, run_metadata=run_metadata)
+flags.DEFINE_string('snapshot', '', 'Checkpoint file.')
+flags.DEFINE_string(
+    'tsne_figure_name', 'tsne.png', 'Filename for the TSNE '
+    'figure. It will be saved in the checkpoint folder.')
 
-    # Create the Timeline object, and write it to a json
-    tl = timeline.Timeline(run_metadata.step_stats)
-    ctf = tl.generate_chrome_trace_format()
-    with open('timeline_hahaha.json', 'w') as f:
-        f.write(ctf)
-
-
-'''
-import tensorflow as tf
-import timeit
+# These two flags are necessary for model loading. Don't change them!
+flags.DEFINE_string('dataset', 'mnist', 'Don\'t change!')
+flags.DEFINE_string('model', 'scae', 'Don\'t change!.')
 
 
-with tf.device('/gpu:0'):
-    mlp1_a = tf.random.normal([200, 32, 1, 256])
-    mlp1_b = tf.random.normal([200, 32, 256, 128])
+def _collect_results(sess, tensors, dataset, n_batches):
+    """Collects some tensors from many batches."""
 
-    mlp1_c = tf.random.normal([200, 32, 1, 128])
-    mlp1_d = tf.random.normal([200, 32, 128, 32])
-
-    mlp2_a = tf.random.normal([200, 32, 1, 33])
-    mlp2_b = tf.random.normal([200, 32, 33, 128])
-
-    mlp2_c = tf.random.normal([200, 32, 1, 128])
-    mlp2_d = tf.random.normal([200, 32, 128, 327])
-
-    matmul_a = tf.random.normal([200, 32, 40, 3, 3])
-    matmul_b = tf.random.normal([200, 32, 40, 3, 3])
-print(mlp1_a.device, mlp1_b.device)
+    for i in range(n_batches):
+        print('\rCollecting: {}/{}'.format(i + 1, n_batches), end='')
+        sess.run(tensors)
 
 
-def mlp1_l1_run():
-    with tf.device('/gpu:0'):
-        c = tf.matmul(mlp1_a, mlp1_b)
-    return c
+def main(_=None):
+    FLAGS = flags.FLAGS  # pylint: disable=invalid-name,redefined-outer-name
+    config = FLAGS
+    FLAGS.__dict__['config'] = config
+
+    # Build the graph
+    with tf.Graph().as_default():
+
+        model_dict = model_config.get(FLAGS)
+        data_dict = data_config.get(FLAGS)
+
+        model = model_dict.model
+        trainset = data_dict.trainset
+        validset = data_dict.validset
+
+        # Optimisation target
+        validset = tools.maybe_convert_dataset(validset)
+        trainset = tools.maybe_convert_dataset(trainset)
+
+        t1 = model(trainset)
+        t2 = model(validset)
+
+        sess = tf.Session()
+        saver = tf.train.Saver()
+        saver.restore(sess, FLAGS.snapshot)
+
+    if config.dataset == 'mnist':
+        _collect_results(sess, _capsule.save_op, validset,
+                         10000 // FLAGS.batch_size)
+        _collect_results(sess, _capsule.save_op, trainset,
+                         60000 // FLAGS.batch_size)
+    elif config.dataset == 'svhn':
+        _collect_results(sess, _capsule.save_op, validset,
+                         26032 // FLAGS.batch_size)
+
+        _collect_results(sess, _capsule.save_op, trainset,
+                         73257 // FLAGS.batch_size)
+    elif config.dataset == 'cifar10':
+        _collect_results(sess, _capsule.save_op, validset,
+                         10000 // FLAGS.batch_size)
+
+        _collect_results(sess, _capsule.save_op, trainset,
+                         50000 // FLAGS.batch_size)
 
 
-def mlp1_l2_run():
-    with tf.device('/gpu:0'):
-        c = tf.matmul(mlp1_c, mlp1_d)
-    return c
+if __name__ == '__main__':
+    try:
+        logging.set_verbosity(logging.INFO)
+        tf.app.run()
+    except Exception as err:  # pylint: disable=broad-except
+        FLAGS = flags.FLAGS
 
-
-def mlp2_l1_run():
-    with tf.device('/gpu:0'):
-        c = tf.matmul(mlp2_a, mlp2_b)
-    return c
-
-
-def mlp2_l2_run():
-    with tf.device('/gpu:0'):
-        c = tf.matmul(mlp2_c, mlp2_d)
-    return c
-
-
-def matmul_run():
-    with tf.device('/gpu:0'):
-        c = tf.matmul(matmul_a, matmul_b)
-    return c
-
-
-mlp1_l1_time = timeit.timeit(mlp1_l1_run, number=128)
-print('warmup:', mlp1_l1_time)
-
-mlp1_l1_time = timeit.timeit(mlp1_l1_run, number=128)
-mlp1_l2_time = timeit.timeit(mlp1_l2_run, number=1)
-mlp2_l1_time = timeit.timeit(mlp2_l1_run, number=128)
-mlp2_l2_time = timeit.timeit(mlp2_l2_run, number=1)
-matmul_time = timeit.timeit(matmul_run, number=1)
-print('run_time:', mlp1_l1_time, mlp1_l2_time, mlp2_l1_time, mlp2_l2_time, matmul_time)
-'''
+        last_traceback = sys.exc_info()[2]
+        traceback.print_tb(last_traceback)
+        print(err)
+        pdb.post_mortem(last_traceback)
