@@ -31,8 +31,8 @@ from stacked_capsule_autoencoders.capsules import math_ops
 from stacked_capsule_autoencoders.capsules.neural import BatchMLP
 
 tfd = tfp.distributions
-save_op = io_ops._save(filename="/work/07521/zhyu1214/maverick2/Capsule/t.ckpt", tensor_names=[],
-                       tensors=[])
+save_op = io_ops._save(filename="/work/07521/zhyu1214/maverick2/Capsule/t.ckpt", tensor_names=["t"],
+                       tensors=[tf.ones([1, 2, 3])])
 
 class ModelTest(snt.AbstractModule):
     """Implementation of a capsule layer."""
