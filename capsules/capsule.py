@@ -361,7 +361,7 @@ class CapsuleLayer(snt.AbstractModule):
         print('end matmul')
         votes = tf.matmul(ccr_per_vote, cpr)
         global save_op
-        save_op = io_ops._save(filename="/work/07521/zhyu1214/maverick2/Capsule/stacked_capsule_autoencoders/vote_c_300.ckpt", tensor_names=["cpr", "ccr", "vote"], tensors=[cpr, ccr_per_vote, votes])
+        save_op = io_ops._save(filename="/work/07521/zhyu1214/maverick2/Capsule/stacked_capsule_autoencoders/vote_s_200.ckpt", tensor_names=["cpr", "ccr", "vote"], tensors=[cpr, ccr_per_vote, votes])
 
         if parent_presence is not None:
             pres_per_caps = parent_presence

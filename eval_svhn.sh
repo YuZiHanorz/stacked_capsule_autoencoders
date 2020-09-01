@@ -21,7 +21,7 @@ export PYTHONPATH=$PYTHONPATH:/work/07521/zhyu1214/maverick2/Capsule
 python -m stacked_capsule_autoencoders.test2\
   --dataset=svhn\
   --snapshot=stacked_capsule_autoencoders/checkpoints/svhn/model.ckpt-300001\
-  --batch_size=100\
+  --batch_size=200\
   --canvas_size=32\
   --template_size=14\
   --n_part_caps=24\
