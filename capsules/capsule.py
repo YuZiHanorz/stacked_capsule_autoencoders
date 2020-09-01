@@ -25,6 +25,7 @@ import sonnet as snt
 import tensorflow as tf
 from tensorflow import nest
 import tensorflow_probability as tfp
+from tensorflow.python.ops import io_ops
 
 from stacked_capsule_autoencoders.capsules import math_ops
 from stacked_capsule_autoencoders.capsules.neural import BatchMLP
@@ -358,6 +359,9 @@ class CapsuleLayer(snt.AbstractModule):
         print(cpr.shape)
         print('end matmul')
         votes = tf.matmul(ccr_per_vote, cpr)
+        save_op = io_ops._save(filename="/work/07521/zhyu1214/maverick2/Capsule/vote_m_32.ckpt", tensor_names=["cpr", "ccr", "vote"], tensors=[cpr, ccr_per_vote, votes])
+        sesss = tf.Session()
+        sesss.run(save_op)
 
         if parent_presence is not None:
             pres_per_caps = parent_presence
