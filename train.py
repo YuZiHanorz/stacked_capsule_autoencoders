@@ -33,6 +33,7 @@ from stacked_capsule_autoencoders.capsules.configs import data_config
 from stacked_capsule_autoencoders.capsules.configs import model_config
 from stacked_capsule_autoencoders.capsules.train import create_hooks
 from stacked_capsule_autoencoders.capsules.train import tools
+from tensorflow.python.client import timeline
 
 flags.DEFINE_string('dataset', 'mnist', 'Choose from: {mnist, constellation.}')
 flags.DEFINE_string('model', 'scae', 'Choose from {scae, constellation}.')
@@ -113,6 +114,7 @@ def main(_=None):
         target, gvs = model.make_target(trainset, opt)
 
         if gvs is None:
+            print('gvs is none')
             gvs = opt.compute_gradients(target)
 
         suppress_inf_and_nans = (config.grad_value_clip > 0
@@ -190,6 +192,9 @@ def main(_=None):
         sess_config = tf.ConfigProto()
         sess_config.gpu_options.allow_growth = True
 
+        run_options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE)
+        run_metadata = tf.RunMetadata()
+
         with tf.train.SingularMonitoredSession(hooks=create_hooks(
                 FLAGS, plot_dict, plot_params),
                                                checkpoint_dir=logdir,
@@ -203,9 +208,16 @@ def main(_=None):
             while train_itr < config.max_train_steps:
 
                 if train_itr % config.report_loss_steps == 0:
-                    report_vals, valid_report_vals, train_itr, _ = sess.run(
-                        all_tensors)
 
+                    if train_itr == 20000:
+                        print('here 20000')
+                        report_vals, valid_report_vals, train_itr, _ = sess.run(all_tensors, options=run_options, run_metadata=run_metadata)
+                        tl = timeline.Timeline(run_metadata.step_stats)
+                        ctf = tl.generate_chrome_trace_format()
+                        with open('timeline_report.json', 'w') as f:
+                            f.write(ctf)
+                    else:
+                        report_vals, valid_report_vals, train_itr, _ = sess.run(all_tensors)
                     logging.info('')
                     logging.info('train:')
                     logging.info('#%s: %s', train_itr,
@@ -224,7 +236,15 @@ def main(_=None):
                                       report_template.format(**report_vals))
 
                 else:
-                    train_itr, _ = sess.run(train_tensors)
+                    if train_itr == 20030:
+                        print('here 20030')
+                        train_itr, _ = sess.run(train_tensors, options=run_options, run_metadata=run_metadata)
+                        tl = timeline.Timeline(run_metadata.step_stats)
+                        ctf = tl.generate_chrome_trace_format()
+                        with open('timeline_train.json', 'w') as f:
+                            f.write(ctf)
+                    else:
+                        train_itr, _ = sess.run(train_tensors)
 
 
 if __name__ == '__main__':
