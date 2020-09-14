@@ -24,6 +24,7 @@ python -m stacked_capsule_autoencoders.train\
   --name=mnist\
   --model=scae\
   --dataset=mnist\
+  --overwrite=True\
   --max_train_steps=300000\
   --batch_size=128\
   --lr=3e-5\
