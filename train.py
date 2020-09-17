@@ -209,15 +209,7 @@ def main(_=None):
 
                 if train_itr % config.report_loss_steps == 0:
 
-                    if train_itr == 20000:
-                        print('here 20000')
-                        report_vals, valid_report_vals, train_itr, _ = sess.run(all_tensors, options=run_options, run_metadata=run_metadata)
-                        tl = timeline.Timeline(run_metadata.step_stats)
-                        ctf = tl.generate_chrome_trace_format()
-                        with open('timeline_report.json', 'w') as f:
-                            f.write(ctf)
-                    else:
-                        report_vals, valid_report_vals, train_itr, _ = sess.run(all_tensors)
+                    report_vals, valid_report_vals, train_itr, _ = sess.run(all_tensors)
                     logging.info('')
                     logging.info('train:')
                     logging.info('#%s: %s', train_itr,
@@ -241,7 +233,8 @@ def main(_=None):
                         train_itr, _ = sess.run(train_tensors, options=run_options, run_metadata=run_metadata)
                         tl = timeline.Timeline(run_metadata.step_stats)
                         ctf = tl.generate_chrome_trace_format()
-                        with open('timeline_train.json', 'w') as f:
+                        tl_str = 'trainTL_' + config.dataset + '_' + str(config.batch_size)
+                        with open(tl_str, 'w') as f:
                             f.write(ctf)
                     else:
                         train_itr, _ = sess.run(train_tensors)
