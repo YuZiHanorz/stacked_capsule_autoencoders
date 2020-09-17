@@ -228,14 +228,15 @@ def main(_=None):
                                       report_template.format(**report_vals))
 
                 else:
-                    if train_itr == 20030:
-                        print('here 20030')
+                    if train_itr == 10030:
+                        print('here 10030')
                         train_itr, _ = sess.run(train_tensors, options=run_options, run_metadata=run_metadata)
                         tl = timeline.Timeline(run_metadata.step_stats)
                         ctf = tl.generate_chrome_trace_format()
                         tl_str = 'trainTL_' + config.dataset + '_' + str(config.batch_size)
                         with open(tl_str, 'w') as f:
                             f.write(ctf)
+                        break
                     else:
                         train_itr, _ = sess.run(train_tensors)
 
