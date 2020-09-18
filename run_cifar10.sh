@@ -25,7 +25,8 @@ python -m stacked_capsule_autoencoders.train\
   --model=scae\
   --dataset=cifar10\
   --max_train_steps=300000\
-  --batch_size=128\
+  --overwrite=True\
+  --batch_size=300\
   --lr=1e-4\
   --decay_steps=3000\
   --use_lr_schedule=True\

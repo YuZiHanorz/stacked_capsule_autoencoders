@@ -26,7 +26,7 @@ python -m stacked_capsule_autoencoders.train\
   --dataset=mnist\
   --overwrite=True\
   --max_train_steps=300000\
-  --batch_size=128\
+  --batch_size=300\
   --lr=3e-5\
   --use_lr_schedule=True\
   --canvas_size=40\
