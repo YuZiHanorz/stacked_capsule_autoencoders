@@ -28,6 +28,8 @@ from absl import logging
 
 import numpy as np
 import tensorflow as tf
+import time
+import matplotlib.pyplot as plt
 
 from stacked_capsule_autoencoders.capsules.configs import data_config
 from stacked_capsule_autoencoders.capsules.configs import model_config
@@ -90,6 +92,9 @@ def main(_=None):
                      logdir)
         shutil.rmtree(logdir)
 
+    fig_time = np.zeros([600])
+    fig_train = np.zeros([600])
+    fig_valid = np.zeros([600])
     # Build the graph
     with tf.Graph().as_default():
 
@@ -192,8 +197,8 @@ def main(_=None):
         sess_config = tf.ConfigProto()
         sess_config.gpu_options.allow_growth = True
 
-        run_options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE)
-        run_metadata = tf.RunMetadata()
+        #run_options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE)
+        #run_metadata = tf.RunMetadata()
 
         with tf.train.SingularMonitoredSession(hooks=create_hooks(
                 FLAGS, plot_dict, plot_params),
@@ -205,30 +210,38 @@ def main(_=None):
             report_tensors = [report, valid_report]
             all_tensors = report_tensors + train_tensors
 
+            start_time = time.time()
             while train_itr < config.max_train_steps:
 
                 if train_itr % config.report_loss_steps == 0:
 
+                    i = (int)(train_itr / config.report_loss_steps)
                     report_vals, valid_report_vals, train_itr, _ = sess.run(all_tensors)
                     logging.info('')
                     logging.info('train:')
                     logging.info('#%s: %s', train_itr,
                                  report_template.format(**report_vals))
 
+                    end_time = time.time()
+                    fig_time[i] = end_time - start_time
+
                     logging.info('valid:')
                     valid_logs = dict(report_vals)
+                    fig_train[i] = valid_logs['best_cls_acc']
                     valid_logs.update(valid_report_vals)
                     logging.info('#%s: %s', train_itr,
                                  report_template.format(**valid_logs))
+                    fig_valid[i] = valid_logs['best_cls_acc']
 
                     vals_to_check = list(report_vals.values())
+
                     if (np.isnan(vals_to_check).any()
                             or np.isnan(vals_to_check).any()):
                         logging.fatal('NaN in reports: %s; breaking...',
                                       report_template.format(**report_vals))
 
                 else:
-                    if train_itr == 10030:
+                    '''if train_itr == 10030:
                         print('here 10030')
                         train_itr, _ = sess.run(train_tensors, options=run_options, run_metadata=run_metadata)
                         tl = timeline.Timeline(run_metadata.step_stats)
@@ -237,8 +250,18 @@ def main(_=None):
                         with open(tl_str, 'w') as f:
                             f.write(ctf)
                         break
-                    else:
-                        train_itr, _ = sess.run(train_tensors)
+                    else:'''
+                    train_itr, _ = sess.run(train_tensors)
+    fig, ax1 = plt.subplots()
+    ax2 = ax1.twinx()
+    lns1 = ax1.plot(fig_time, fig_train, label="train_accuracy")
+    lns2 = ax2.plot(fig_time, fig_valid, 'r', label="valid_accuracy")
+    ax1.set_xlabel('time')
+    ax1.set_ylabel('accuracy')
+    lns = lns1 + lns2
+    labels = ["train", "valid"]
+    plt.legend(lns, labels, loc=7)
+    plt.savefig('./time_accuracy.jpg')
 
 
 if __name__ == '__main__':
