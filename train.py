@@ -252,6 +252,10 @@ def main(_=None):
                         break
                     else:'''
                     train_itr, _ = sess.run(train_tensors)
+    np.save('a.npy', fig_time)
+    np.save('b.npy', fig_train)
+    np.save('c.npy', fig_valid)
+    print('here we can plot the curve')
     fig, ax1 = plt.subplots()
     ax2 = ax1.twinx()
     lns1 = ax1.plot(fig_time, fig_train, label="train_accuracy")
