@@ -34,6 +34,7 @@ from stacked_capsule_autoencoders.capsules.eval import cluster_classify
 from stacked_capsule_autoencoders.capsules.eval import collect_results
 from stacked_capsule_autoencoders.capsules.plot import make_tsne_plot
 from stacked_capsule_autoencoders.capsules.train import tools
+from stacked_capsule_autoencoders.load_affnist import *
 
 flags.DEFINE_string('snapshot', '', 'Checkpoint file.')
 flags.DEFINE_string(
@@ -68,18 +69,27 @@ def main(_=None):
     with tf.Graph().as_default():
 
         model_dict = model_config.get(FLAGS)
-        data_dict = data_config.get(FLAGS)
-
         model = model_dict.model
-        trainset = data_dict.trainset
-        validset = data_dict.validset
 
-        # Optimisation target
-        validset = tools.maybe_convert_dataset(validset)
-        trainset = tools.maybe_convert_dataset(trainset)
+        if config.dataset == 'affnist':
+            print('here we start affnist')
+            testset = affnist_reader(FLAGS.batch_size)
+            print(testset)
+            print('after convert')
+            testset = tools.maybe_convert_dataset(testset)
+            print(testset)
+            testtensors = model(testset)
 
-        train_tensors = model(trainset)
-        valid_tensors = model(validset)
+        else:
+            data_dict = data_config.get(FLAGS)
+            trainset = data_dict.trainset
+            validset = data_dict.validset
+            # Optimisation target
+            validset = tools.maybe_convert_dataset(validset)
+            trainset = tools.maybe_convert_dataset(trainset)
+
+            train_tensors = model(trainset)
+            valid_tensors = model(validset)
 
         sess = tf.Session()
         saver = tf.train.Saver()
@@ -87,21 +97,24 @@ def main(_=None):
 
     if config.dataset == 'mnist':
         valid_results = _collect_results(sess, valid_tensors, validset,
-                                        10000 // FLAGS.batch_size)
+                                         10000 // FLAGS.batch_size)
         train_results = _collect_results(sess, train_tensors, trainset,
-                                        60000 // FLAGS.batch_size)
+                                         60000 // FLAGS.batch_size)
     elif config.dataset == 'svhn':
         valid_results = _collect_results(sess, valid_tensors, validset,
-                                        26032 // FLAGS.batch_size)
-
+                                         26032 // FLAGS.batch_size)
         train_results = _collect_results(sess, train_tensors, trainset,
-                                        73257 // FLAGS.batch_size)
+                                         73257 // FLAGS.batch_size)
     elif config.dataset == 'cifar10':
         valid_results = _collect_results(sess, valid_tensors, validset,
-                                        10000 // FLAGS.batch_size)
-
+                                         10000 // FLAGS.batch_size)
         train_results = _collect_results(sess, train_tensors, trainset,
-                                        50000 // FLAGS.batch_size)
+                                         50000 // FLAGS.batch_size)
+    elif config.dataset == 'affnist':
+        valid_results = _collect_results(sess, testtensors, testset,
+                                         320000 // FLAGS.batch_size)
+        train_results = _collect_results(sess, testtensors, testset,
+                                         320000 // FLAGS.batch_size)
 
     results = AttrDict(train=train_results, valid=valid_results)
 
