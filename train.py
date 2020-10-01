@@ -252,9 +252,9 @@ def main(_=None):
                         break
                     else:'''
                     train_itr, _ = sess.run(train_tensors)
-    fig_time_str = config.dataset + '_' + str(config.batchsize) + '_time'
-    fig_train_str = config.dataset + '_' + str(config.batchsize) + '_train'
-    fig_valid_str = config.dataset + '_' + str(config.batchsize) + '_valid'
+    fig_time_str = config.dataset + '_' + str(config.batchsize) + '_time.npy'
+    fig_train_str = config.dataset + '_' + str(config.batchsize) + '_train.npy'
+    fig_valid_str = config.dataset + '_' + str(config.batchsize) + '_valid.npy'
     
     np.save(fig_time_str, fig_time)
     np.save(fig_train_str, fig_train)
