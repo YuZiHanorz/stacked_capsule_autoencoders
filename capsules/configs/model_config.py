@@ -105,7 +105,7 @@ def make_scae(config):
     img_size = [config.canvas_size] * 2
     template_size = [config.template_size] * 2
 
-    if config.dataset == 'mnist':
+    if config.dataset == 'mnist' or config.dataset == 'affnist':
         cnn_encoder = snt.nets.ConvNet2D(output_channels=[128] * 4,
                                          kernel_shapes=[3],
                                          strides=[2, 2, 1, 1],
