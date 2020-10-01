@@ -252,9 +252,13 @@ def main(_=None):
                         break
                     else:'''
                     train_itr, _ = sess.run(train_tensors)
-    np.save('a.npy', fig_time)
-    np.save('b.npy', fig_train)
-    np.save('c.npy', fig_valid)
+    fig_time_str = config.dataset + '_' + str(config.batchsize) + '_time'
+    fig_train_str = config.dataset + '_' + str(config.batchsize) + '_train'
+    fig_valid_str = config.dataset + '_' + str(config.batchsize) + '_valid'
+    
+    np.save(fig_time_str, fig_time)
+    np.save(fig_train_str, fig_train)
+    np.save(fig_valid_str, fig_valid)
     print('here we can plot the curve')
     fig, ax1 = plt.subplots()
     ax2 = ax1.twinx()
