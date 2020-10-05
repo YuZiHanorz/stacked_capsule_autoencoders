@@ -27,7 +27,7 @@ def _todict(matobj):
 
 
 def affnist_reader(batch_size):
-    test_path = glob(os.path.join('./data/affnist/', "test.mat"))
+    test_path = glob(os.path.join('../data/affnist/', "test.mat"))
     print(test_path)
     test_data = load_data_from_mat(test_path[0])
     testX = test_data['affNISTdata']['image'].transpose()

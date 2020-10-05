@@ -26,7 +26,7 @@ python -m stacked_capsule_autoencoders.train\
   --dataset=cifar10\
   --max_train_steps=300000\
   --overwrite=True\
-  --batch_size=300\
+  --batch_size=128\
   --lr=1e-4\
   --decay_steps=3000\
   --use_lr_schedule=True\
