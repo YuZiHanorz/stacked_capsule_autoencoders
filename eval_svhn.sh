@@ -18,7 +18,12 @@ set -x
 
 export PYTHONPATH=$PYTHONPATH:/work/07521/zhyu1214/maverick2/Capsule
 #source stacked_capsule_autoencoders/setup_virtualenv.sh
-python -m stacked_capsule_autoencoders.test2\
+#nvprof --log-file stacked_dram_read_throughput_svhn.csv --metrics dram_read_throughput \
+#nvprof --log-file stacked_dram_read_transaction_svhn.csv --metrics dram_read_transactions \
+#nvprof --log-file stacked_dram_write_throughput_svhn.csv --metrics dram_write_throughput \
+#nvprof --log-file stacked_dram_write_transaction_svhn.csv --metrics dram_write_transactions \
+nvprof --log-file stacked_dram_read_throughput_svhn_200.csv --metrics dram_read_throughput \
+python -m stacked_capsule_autoencoders.eval_mnist_model\
   --dataset=svhn\
   --snapshot=stacked_capsule_autoencoders/checkpoints/svhn/model.ckpt-300001\
   --batch_size=200\
