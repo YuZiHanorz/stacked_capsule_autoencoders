@@ -21,7 +21,7 @@ export PYTHONPATH=$PYTHONPATH:/work/07521/zhyu1214/maverick2/Capsule
 python -m stacked_capsule_autoencoders.eval_mnist_model\
   --dataset=affnist\
   --snapshot=stacked_capsule_autoencoders/checkpoints/mnist/model.ckpt-300001\
-  --batch_size=32\
+  --batch_size=300\
   --canvas_size=40\
   --n_part_caps=40\
   --n_obj_caps=32\

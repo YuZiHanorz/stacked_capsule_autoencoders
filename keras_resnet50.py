@@ -2,6 +2,7 @@ import tensorflow as tf
 from tensorflow import keras
 import numpy as np
 from stacked_capsule_autoencoders.capsules.data import preprocess
+import time
 
 
 def prepare_data_for_resnet50(data_to_transform):
@@ -25,10 +26,17 @@ y_train = keras.utils.to_categorical(ytrain, 10)
 
 input_shape = (40, 40, 3)
 classes = 10
+bs = 4
 inputs = keras.Input(shape=input_shape)
 outputs = keras.applications.ResNet50(input_shape=input_shape, weights=None, classes=classes)(inputs)
 model = keras.Model(inputs, outputs)
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-score = model.evaluate(x_test, y_test, verbose=0)
-score = model.evaluate(x_train, y_train, verbose=0)
-print(score)
+print('timing start')
+st = time.time()
+score1 = model.evaluate(x_test, y_test, batch_size=bs, verbose=0)
+score2 = model.evaluate(x_train, y_train, batch_size=bs, verbose=0)
+print('timing end')
+ed = time.time()
+print(score1, score2)
+print(ed - st)
+

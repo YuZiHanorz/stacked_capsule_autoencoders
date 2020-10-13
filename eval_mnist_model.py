@@ -113,8 +113,7 @@ def main(_=None):
     elif config.dataset == 'affnist':
         valid_results = _collect_results(sess, testtensors, testset,
                                          320000 // FLAGS.batch_size)
-        train_results = _collect_results(sess, testtensors, testset,
-                                         320000 // FLAGS.batch_size)
+        train_results = valid_results
 
     results = AttrDict(train=train_results, valid=valid_results)
 
