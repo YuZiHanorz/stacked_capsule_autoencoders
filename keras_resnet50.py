@@ -26,7 +26,7 @@ y_train = keras.utils.to_categorical(ytrain, 10)
 
 input_shape = (40, 40, 3)
 classes = 10
-bs = 300
+bs = 100
 inputs = keras.Input(shape=input_shape)
 outputs = keras.applications.ResNet50(input_shape=input_shape, weights=None, classes=classes)(inputs)
 model = keras.Model(inputs, outputs)
@@ -37,6 +37,6 @@ score1 = model.evaluate(x_test, y_test, batch_size=bs, verbose=0)
 score2 = model.evaluate(x_train, y_train, batch_size=bs, verbose=0)
 print('timing end')
 ed = time.time()
-print(score1, score2)
+print(bs, score1, score2)
 print(ed - st)
 
