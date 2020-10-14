@@ -22,5 +22,5 @@ export PYTHONPATH=$PYTHONPATH:/work/07521/zhyu1214/maverick2/Capsule
 #nvprof --log-file cnn_dram_read_transaction_cifar10.csv --metrics dram_read_transactions \
 #nvprof --log-file cnn_dram_write_throughput_cifar10.csv --metrics dram_write_throughput \
 #nvprof --log-file cnn_dram_write_transaction_cifar10.csv --metrics dram_write_transactions \
-nvprof --log-file cnn_dram_read_transactions_mnist.csv --metrics dram_read_transactions \
+nvprof --log-file cnn_dram_write_transactions_mnist_300.csv --metrics dram_write_transactions \
 python -m stacked_capsule_autoencoders.keras_resnet50

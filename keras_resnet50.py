@@ -26,7 +26,7 @@ y_train = keras.utils.to_categorical(ytrain, 10)
 
 input_shape = (40, 40, 3)
 classes = 10
-bs = 4
+bs = 300
 inputs = keras.Input(shape=input_shape)
 outputs = keras.applications.ResNet50(input_shape=input_shape, weights=None, classes=classes)(inputs)
 model = keras.Model(inputs, outputs)
