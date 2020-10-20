@@ -1,0 +1,159 @@
+======== Profiling result:
+======== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "GeForce GTX 1080 Ti (0)"
+    Kernel: void cudnn::winograd_nonfused::winogradForwardOutput4x4<float, float>(cudnn::winograd_nonfused::WinogradOutputParams<float, float>)
+          8                   dram_write_transactions          Device Memory Write Transactions         140       22115        8046
+    Kernel: void tensorflow::functor::SwapDimension1And2InTensor3UsingTiles<unsigned int, int=512, int=512, int=3, bool=0>(unsigned int const *, tensorflow::functor::Dimension<int=3>, tensorflow::functor::SwapDimension1And2InTensor3UsingTiles<unsigned int, int=512, int=512, int=3, bool=0>*)
+       1876                   dram_write_transactions          Device Memory Write Transactions        2330       20925       18170
+    Kernel: void flip_filter<float, float>(float*, float const *, int, int, int, int)
+         26                   dram_write_transactions          Device Memory Write Transactions        1948      304111       63589
+    Kernel: maxwell_sgemm_128x64_nn
+          8                   dram_write_transactions          Device Memory Write Transactions       18433      104062       49422
+    Kernel: void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorReshapingOp<Eigen::IndexList<int> const , Eigen::TensorMap<Eigen::Tensor<float, int=2, int=1, long>, int=16, Eigen::MakePointer>>, Eigen::TensorReductionOp<Eigen::internal::SumReducer<float>, Eigen::IndexList<Eigen::type2index<long=1>> const , Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_exp_op<float>, Eigen::TensorMap<Eigen::Tensor<float, int=2, int=1, long>, int=16, Eigen::MakePointer> const > const , Eigen::MakePointer> const > const , Eigen::GpuDevice>, long>(int, )
+       1876                   dram_write_transactions          Device Memory Write Transactions          72         388         267
+    Kernel: maxwell_gcgemm_32x32_nt
+          8                   dram_write_transactions          Device Memory Write Transactions      121343     1150551      343830
+    Kernel: void cudnn::detail::explicit_convolve_sgemm<float, int, int=1024, int=5, int=5, int=3, int=3, int=3, int=0, bool=1>(int, int, int, float const *, int, float const , int, cudnn::detail::explicit_convolve_sgemm<float, int, int=1024, int=5, int=5, int=3, int=3, int=3, int=0, bool=1>*, kernel_conv_params, int, int, float, float, int, float const *, float const *)
+         16                   dram_write_transactions          Device Memory Write Transactions        6551       43517       25708
+    Kernel: maxwell_cgemm_32x64_tn
+         11                   dram_write_transactions          Device Memory Write Transactions       63667      627303      203862
+    Kernel: maxwell_scudnn_128x64_relu_small_nn
+          2                   dram_write_transactions          Device Memory Write Transactions       10436       17652       14044
+    Kernel: void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, int=1, int=1, int>, int=16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_left<float, float, Eigen::internal::scalar_sum_op<float, float>, bool=0>, Eigen::TensorMap<Eigen::Tensor<float const , int=1, int=1, int>, int=16, Eigen::MakePointer> const > const > const , Eigen::GpuDevice>, int>(float, int=1)
+         54                   dram_write_transactions          Device Memory Write Transactions         512      296711       54222
+    Kernel: void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorEvalToOp<Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_log_op<float>, Eigen::TensorMap<Eigen::Tensor<float, int=2, int=1, long>, int=16, Eigen::MakePointer> const > const , Eigen::MakePointer> const , Eigen::GpuDevice>, long>(float, Eigen::internal::scalar_log_op<float>)
+       1876                   dram_write_transactions          Device Memory Write Transactions           0          28           7
+    Kernel: void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, int=1, int=1, long>, int=16, Eigen::MakePointer>, Eigen::TensorConversionOp<float, Eigen::TensorMap<Eigen::Tensor<int const , int=1, int=1, long>, int=16, Eigen::MakePointer> const > const > const , Eigen::GpuDevice>, long>(float, int=1)
+       3752                   dram_write_transactions          Device Memory Write Transactions           0           8           0
+    Kernel: void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorEvalToOp<Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float const , float const >, Eigen::TensorBroadcastingOp<Eigen::array<long, unsigned long=2> const , Eigen::TensorMap<Eigen::Tensor<float const , int=2, int=1, long>, int=16, Eigen::MakePointer> const > const , Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_difference_op<float, float>, Eigen::TensorBroadcastingOp<Eigen::IndexList<Eigen::type2index<long=1>> const , Eigen::TensorForcedEvalOp<Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_log_op<float>, Eigen::TensorMap<Eigen::Tensor<float, int=2, int=1, long>, int=16, Eigen::MakePointer> const > const > const > const , Eigen::TensorMap<Eigen::Tensor<float, int=2, int=1, long>, int=16, Eigen::MakePointer> const > const > const , Eigen::MakePointer> const , Eigen::GpuDevice>, long>(float const , float const )
+       1876                   dram_write_transactions          Device Memory Write Transactions           0          20           5
+    Kernel: maxwell_gcgemm_64x32_nt
+          2                   dram_write_transactions          Device Memory Write Transactions       77107      175302      126204
+    Kernel: cudnn_maxwell_gcgemm_64x32_tn_batched
+         10                   dram_write_transactions          Device Memory Write Transactions      105500     2387292      648698
+    Kernel: void tensorflow::BiasNHWCKernel<float>(int, float const *, float const , tensorflow::BiasNHWCKernel<float>*, int)
+       1876                   dram_write_transactions          Device Memory Write Transactions           0           8           0
+    Kernel: cudnn::maxwell::gemm::computeOffsetsKernel(cudnn::maxwell::gemm::ComputeOffsetsParams)
+         38                   dram_write_transactions          Device Memory Write Transactions           0         196          92
+    Kernel: void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, int=1, int=1, long>, int=16, Eigen::MakePointer>, Eigen::TensorReductionOp<Eigen::internal::SumReducer<float>, Eigen::IndexList<Eigen::type2index<long=1>> const , Eigen::TensorForcedEvalOp<Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_product_op<float const , float const >, Eigen::TensorBroadcastingOp<Eigen::array<long, unsigned long=2> const , Eigen::TensorMap<Eigen::Tensor<float const , int=2, int=1, long>, int=16, Eigen::MakePointer> const > const , Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_difference_op<float, float>, Eigen::TensorBroadcastingOp<Eigen::IndexList<Eigen::type2index<long=1>> const , Eigen::TensorForcedEvalOp<Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_log_op<float>, Eigen::TensorMap<Eigen::Tensor<float, int=2, int=1, long>, int=16, Eigen::MakePointer> const > const > const > const , Eigen::TensorMap<Eigen::Tensor<float, int=2, int=1, long>, int=16, Eigen::MakePointer> const > const > const > const , Eigen::MakePointer> const > const , Eigen::GpuDevice>, long>(float, int=1)
+       1876                   dram_write_transactions          Device Memory Write Transactions         756        2524        1760
+    Kernel: void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, int=1, int=1, long>, int=16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_max_op<float const , float const >, Eigen::TensorMap<Eigen::Tensor<float const , int=1, int=1, long>, int=16, Eigen::MakePointer> const , Eigen::TensorCwiseNullaryOp<Eigen::internal::scalar_constant_op<float const >, Eigen::TensorMap<Eigen::Tensor<float const , int=1, int=1, long>, int=16, Eigen::MakePointer> const > const > const > const , Eigen::GpuDevice>, long>(float, int=1)
+      91924                   dram_write_transactions          Device Memory Write Transactions           0       52272        5340
+    Kernel: void tensorflow::_GLOBAL__N__64_tmpxft_00066e33_00000000_12_softmax_op_gpu_cu_compute_75_cpp1_ii_d41ce5d8::GenerateNormalizedProb<float, float>(float const *, float const *, float const , tensorflow::_GLOBAL__N__64_tmpxft_00066e33_00000000_12_softmax_op_gpu_cu_compute_75_cpp1_ii_d41ce5d8::GenerateNormalizedProb<float, float>*, int, int, bool)
+       1876                   dram_write_transactions          Device Memory Write Transactions           0          28           8
+    Kernel: void cudnn::detail::implicit_convolve_sgemm<float, float, int=128, int=5, int=5, int=3, int=3, int=3, int=1, bool=1, bool=0, bool=1>(int, int, int, float const *, int, float*, cudnn::detail::implicit_convolve_sgemm<float, float, int=128, int=5, int=5, int=3, int=3, int=3, int=1, bool=1, bool=0, bool=1>*, kernel_conv_params, int, float, float, int, float, float, int, int)
+      58199                   dram_write_transactions          Device Memory Write Transactions           0      120136       20313
+    Kernel: cudnn_maxwell_gcgemm_64x64_nt_batched
+          8                   dram_write_transactions          Device Memory Write Transactions       46342      285898      136740
+    Kernel: void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, int=1, int=1, long>, int=16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_sum_op<float const , float const >, Eigen::TensorMap<Eigen::Tensor<float, int=1, int=1, long>, int=16, Eigen::MakePointer> const , Eigen::TensorMap<Eigen::Tensor<float const , int=1, int=1, long>, int=16, Eigen::MakePointer> const > const > const , Eigen::GpuDevice>, long>(float, int=1)
+       3752                   dram_write_transactions          Device Memory Write Transactions           0           8           0
+    Kernel: redzone_checker
+        680                   dram_write_transactions          Device Memory Write Transactions          23       66542        6521
+    Kernel: maxwell_scudnn_winograd_128x128_ldg1_ldg4_tile418n_nt
+          2                   dram_write_transactions          Device Memory Write Transactions       48354       51750       50052
+    Kernel: void cudnn::detail::bn_fw_inf_1C11_kernel_NCHW<float, float, bool=1, int=1>(float, cudnn::detail::bn_fw_inf_1C11_kernel_NCHW<float, float, bool=1, int=1>, cudnnTensorStruct, float const *, float, cudnnTensorStruct*, float, cudnn::detail::bn_fw_inf_1C11_kernel_NCHW<float, float, bool=1, int=1> const *, cudnn::detail::bn_fw_inf_1C11_kernel_NCHW<float, float, bool=1, int=1> const , cudnn::detail::bn_fw_inf_1C11_kernel_NCHW<float, float, bool=1, int=1> const , cudnn::detail::bn_fw_inf_1C11_kernel_NCHW<float, float, bool=1, int=1> const , cudnn::detail::bn_fw_inf_1C11_kernel_NCHW<float, float, bool=1, int=1>)
+      99428                   dram_write_transactions          Device Memory Write Transactions           0       65580        6855
+    Kernel: void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, int=1, int=1, int>, int=16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_right<float, float, Eigen::internal::scalar_product_op<float, float>, bool=0>, Eigen::TensorMap<Eigen::Tensor<float const , int=1, int=1, int>, int=16, Eigen::MakePointer> const > const > const , Eigen::GpuDevice>, int>(float, int=1)
+         28                   dram_write_transactions          Device Memory Write Transactions         496      295315       67158
+    Kernel: void cudnn::detail::implicit_convolve_sgemm<float, float, int=128, int=6, int=7, int=3, int=3, int=5, int=1, bool=1, bool=0, bool=1>(int, int, int, float const *, int, float*, cudnn::detail::implicit_convolve_sgemm<float, float, int=128, int=6, int=7, int=3, int=3, int=5, int=1, bool=1, bool=0, bool=1>*, kernel_conv_params, int, float, float, int, float, float, int, int)
+       9375                   dram_write_transactions          Device Memory Write Transactions          31       79787       62047
+    Kernel: void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorReshapingOp<Eigen::IndexList<int> const , Eigen::TensorMap<Eigen::Tensor<float, int=2, int=1, long>, int=16, Eigen::MakePointer>>, Eigen::TensorReductionOp<Eigen::internal::MaxReducer<float>, Eigen::IndexList<Eigen::type2index<long=1>> const , Eigen::TensorBroadcastingOp<Eigen::array<long, unsigned long=2> const , Eigen::TensorMap<Eigen::Tensor<float const , int=2, int=1, long>, int=16, Eigen::MakePointer> const > const , Eigen::MakePointer> const > const , Eigen::GpuDevice>, long>(int, )
+       1876                   dram_write_transactions          Device Memory Write Transactions           0           8           0
+    Kernel: void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, int=2, int=1, long>, int=16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_difference_op<float, float>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_quotient_op<float, float>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_exp_op<float>, Eigen::TensorMap<Eigen::Tensor<float, int=2, int=1, long>, int=16, Eigen::MakePointer> const > const , Eigen::TensorBroadcastingOp<Eigen::IndexList<Eigen::type2index<long=1>> const , Eigen::TensorMap<Eigen::Tensor<float, int=2, int=1, long>, int=16, Eigen::MakePointer> const > const > const , Eigen::TensorBroadcastingOp<Eigen::array<long, unsigned long=2> const , Eigen::TensorMap<Eigen::Tensor<float const , int=2, int=1, long>, int=16, Eigen::MakePointer> const > const > const > const , Eigen::GpuDevice>, long>(float, int=2)
+       1876                   dram_write_transactions          Device Memory Write Transactions           0          24           4
+    Kernel: void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, int=1, int=1, int>, int=16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_right<float, float, Eigen::internal::div_no_nan_op<float>, bool=0>, Eigen::TensorMap<Eigen::Tensor<float const , int=1, int=1, int>, int=16, Eigen::MakePointer> const > const > const , Eigen::GpuDevice>, int>(float, int=1)
+       3752                   dram_write_transactions          Device Memory Write Transactions           0          20           1
+    Kernel: void cudnn::detail::explicit_convolve_sgemm<float, int, int=128, int=5, int=5, int=3, int=3, int=3, int=0, bool=1>(int, int, int, float const *, int, float const , int, cudnn::detail::explicit_convolve_sgemm<float, int, int=128, int=5, int=5, int=3, int=3, int=3, int=0, bool=1>*, kernel_conv_params, int, int, float, float, int, float const *, float const *)
+         24                   dram_write_transactions          Device Memory Write Transactions        2959      208374       37240
+    Kernel: cudnn_maxwell_cgemm_64x32_nt_batched
+          5                   dram_write_transactions          Device Memory Write Transactions      258816      293890      275968
+    Kernel: void fft2d_r2c_32x32<float, bool=0, unsigned int=0, bool=0>(float2*, float const *, int, int, int, int, int, int, int, int, int, cudnn::reduced_divisor, bool, int2, int, int)
+          8                   dram_write_transactions          Device Memory Write Transactions          80       15239        5120
+    Kernel: void fft1d_r2c_32<float, float, float2, bool=0, bool=0>(float2*, float const *, int, int3, int3, int2, int2)
+         18                   dram_write_transactions          Device Memory Write Transactions       33491      279370      121767
+    Kernel: void cudnn::detail::implicit_convolve_sgemm<float, float, int=1024, int=5, int=5, int=3, int=3, int=3, int=1, bool=1, bool=0, bool=1>(int, int, int, float const *, int, float*, cudnn::detail::implicit_convolve_sgemm<float, float, int=1024, int=5, int=5, int=3, int=3, int=3, int=1, bool=1, bool=0, bool=1>*, kernel_conv_params, int, float, float, int, float, float, int, int)
+      31896                   dram_write_transactions          Device Memory Write Transactions           0       45918       20109
+    Kernel: void fft1d_r2c_32<float, float, float2, bool=1, bool=0>(float2*, float const *, int, int3, int3, int2, int2)
+         18                   dram_write_transactions          Device Memory Write Transactions       16344     4456601     1316480
+    Kernel: void im2col4d_kernel<float, int>(im2col4d_params, cudnnConvolutionStruct, cudnnTensor4dStruct, float const *, float*, int)
+         40                   dram_write_transactions          Device Memory Write Transactions        3356      152892       29442
+    Kernel: void cudnn::winograd_nonfused::winogradForwardData4x4<float, float>(cudnn::winograd_nonfused::WinogradDataParams<float, float>)
+          8                   dram_write_transactions          Device Memory Write Transactions       14024       79402       35870
+    Kernel: void fft2d_c2r_32x32<float, bool=1, bool=0, unsigned int=0, bool=0, bool=0>(float*, float2 const *, int, int, int, int, int, int, int, int, int, float, float, cudnn::reduced_divisor, bool, float*, float*, int2, int, int)
+          8                   dram_write_transactions          Device Memory Write Transactions       34414       93874       51593
+    Kernel: void fft2d_c2r_32x32<float, bool=0, bool=0, unsigned int=1, bool=0, bool=0>(float*, float2 const *, int, int, int, int, int, int, int, int, int, float, float, cudnn::reduced_divisor, bool, float*, float*, int2, int, int)
+          8                   dram_write_transactions          Device Memory Write Transactions       11906       51882       28632
+    Kernel: compute_gemm_pointers(float2**, float2 const *, int, float2 const *, int, float2 const *, int, int)
+         11                   dram_write_transactions          Device Memory Write Transactions         280         460         337
+    Kernel: maxwell_cgemm_32x32_tn
+        144                   dram_write_transactions          Device Memory Write Transactions        8237       46367        8510
+    Kernel: maxwell_scudnn_winograd_128x128_ldg1_ldg4_tile148n_nt
+          4                   dram_write_transactions          Device Memory Write Transactions       13772       48898       33101
+    Kernel: void tensorflow::functor::ShuffleInTensor3Simple<float, int=2, int=1, int=0, bool=0>(int, float const *, tensorflow::functor::Dimension<int=3>, tensorflow::functor::ShuffleInTensor3Simple<float, int=2, int=1, int=0, bool=0>*)
+      99428                   dram_write_transactions          Device Memory Write Transactions           0      291038       42909
+    Kernel: void fft1d_c2r_32<float2, float, float, bool=0, bool=1, bool=0, bool=0>(float*, float2 const *, int, int3, int3, int2, int, float, float, float*, float*)
+         18                   dram_write_transactions          Device Memory Write Transactions          24       81231       22902
+    Kernel: maxwell_scudnn_winograd_128x128_ldg1_ldg4_tile228n_nt
+          2                   dram_write_transactions          Device Memory Write Transactions       10078       14733       12405
+    Kernel: void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, int=1, int=1, long>, int=16, Eigen::MakePointer>, Eigen::TensorConversionOp<float, Eigen::TensorMap<Eigen::Tensor<bool const , int=1, int=1, long>, int=16, Eigen::MakePointer> const > const > const , Eigen::GpuDevice>, long>(float, int=1)
+       1876                   dram_write_transactions          Device Memory Write Transactions           0           8           0
+    Kernel: void cgemm_largek<bool=1, bool=0, bool=0, bool=0, int=4, int=4, int=4, int=3, int=3, int=18>(float2*, float2 const *, float2 const *, int, int, int, int, int, int, float2 const *, float2 const *, float2, float2, int, int, int*, int*)
+        144                   dram_write_transactions          Device Memory Write Transactions        4172       46226        4481
+    Kernel: cudnn_maxwell_gcgemm_32x32_nt_batched
+          4                   dram_write_transactions          Device Memory Write Transactions       59974      293874      155725
+    Kernel: void fft2d_r2c_16x16<float>(float2*, float const *, int, int, int, int, int, int, int, int)
+         52                   dram_write_transactions          Device Memory Write Transactions       36687    37741060     4533899
+    Kernel: maxwell_scudnn_128x64_relu_interior_nn
+          6                   dram_write_transactions          Device Memory Write Transactions        9272       63937       27051
+    Kernel: void tensorflow::functor::RowReduceKernel<cub::TransformInputIterator<float, tensorflow::_GLOBAL__N__64_tmpxft_00066e33_00000000_12_softmax_op_gpu_cu_compute_75_cpp1_ii_d41ce5d8::SubtractAndExpFunctor<float, float>, cub::CountingInputIterator<int, long>, long>, float*, cub::Sum>(float, float, int, int, float, std::iterator_traits<tensorflow::functor::RowReduceKernel<cub::TransformInputIterator<float, tensorflow::_GLOBAL__N__64_tmpxft_00066e33_00000000_12_softmax_op_gpu_cu_compute_75_cpp1_ii_d41ce5d8::SubtractAndExpFunctor<float, float>, cub::CountingInputIterator<int, long>, long>, float*, cub::Sum>>::value_type)
+       1876                   dram_write_transactions          Device Memory Write Transactions           0          12           2
+    Kernel: void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, int=2, int=1, long>, int=16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_difference_op<float const , float const >, Eigen::TensorBroadcastingOp<Eigen::array<long, unsigned long=2> const , Eigen::TensorMap<Eigen::Tensor<float const , int=2, int=1, long>, int=16, Eigen::MakePointer> const > const , Eigen::TensorBroadcastingOp<Eigen::IndexList<Eigen::type2index<long=1>> const , Eigen::TensorMap<Eigen::Tensor<float, int=2, int=1, long>, int=16, Eigen::MakePointer> const > const > const > const , Eigen::GpuDevice>, long>(float, int=2)
+       1876                   dram_write_transactions          Device Memory Write Transactions           0          12           1
+    Kernel: void cudnn::detail::pooling_fw_4d_kernel<float, float, cudnn::detail::maxpooling_func<float, cudnnNanPropagation_t=0>, int=0, bool=0>(cudnnTensorStruct, float const *, cudnn::detail::pooling_fw_4d_kernel<float, float, cudnn::detail::maxpooling_func<float, cudnnNanPropagation_t=0>, int=0, bool=0>, cudnnTensorStruct*, cudnnPoolingStruct, float, cudnnPoolingStruct, int, cudnn::reduced_divisor, float)
+       1876                   dram_write_transactions          Device Memory Write Transactions       13053       29193       28170
+    Kernel: void fft2d_r2c_32x32<float, bool=0, unsigned int=1, bool=0>(float2*, float const *, int, int, int, int, int, int, int, int, int, cudnn::reduced_divisor, bool, int2, int, int)
+          8                   dram_write_transactions          Device Memory Write Transactions      138983     2227683      783036
+    Kernel: maxwell_scudnn_128x128_relu_small_nn
+          2                   dram_write_transactions          Device Memory Write Transactions       11840       15648       13744
+    Kernel: void cudnn::winograd_nonfused::winogradForwardFilter4x4<float, float>(cudnn::winograd_nonfused::WinogradFilterParams<float, float>)
+          8                   dram_write_transactions          Device Memory Write Transactions       17673     1172377      385486
+    Kernel: void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, int=1, int=1, int>, int=16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_sum_op<float, float>, Eigen::TensorMap<Eigen::Tensor<float const , int=1, int=1, int>, int=16, Eigen::MakePointer> const , Eigen::TensorMap<Eigen::Tensor<float const , int=1, int=1, long>, int=16, Eigen::MakePointer> const > const > const , Eigen::GpuDevice>, long>(float, int=1)
+      30016                   dram_write_transactions          Device Memory Write Transactions           0       70001       23363
+    Kernel: void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<bool, int=1, int=1, int>, int=16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::equal_to<__int64>, Eigen::TensorMap<Eigen::Tensor<__int64 const , int=1, int=1, int>, int=16, Eigen::MakePointer> const , Eigen::TensorMap<Eigen::Tensor<__int64 const , int=1, int=1, long>, int=16, Eigen::MakePointer> const > const > const , Eigen::GpuDevice>, long>(bool, int=1)
+       1876                   dram_write_transactions          Device Memory Write Transactions           0           8           0
+    Kernel: void tensorflow::BiasNCHWKernel<float>(int, float const *, float const , tensorflow::BiasNCHWKernel<float>*, int, int)
+      99428                   dram_write_transactions          Device Memory Write Transactions           0       55255        5113
+    Kernel: void cudnn::winograd::generateWinogradTilesKernel<int=0, float, float>(cudnn::winograd::GenerateWinogradTilesParams<float, float>)
+          8                   dram_write_transactions          Device Memory Write Transactions        8892      522876      173123
+    Kernel: maxwell_scudnn_128x128_relu_interior_nn
+         28                   dram_write_transactions          Device Memory Write Transactions           0       65047       30005
+    Kernel: void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, int=1, int=1, int>, int=16, Eigen::MakePointer>, Eigen::TensorCwiseUnaryOp<Eigen::internal::scalar_left<float, float, Eigen::internal::scalar_product_op<float, float>, bool=0>, Eigen::TensorMap<Eigen::Tensor<float const , int=1, int=1, int>, int=16, Eigen::MakePointer> const > const > const , Eigen::GpuDevice>, int>(float, int=1)
+         26                   dram_write_transactions          Device Memory Write Transactions        1592      296182       40177
+    Kernel: void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, int=4, int=1, int>, int=16, Eigen::MakePointer>, Eigen::TensorPaddingOp<Eigen::array<Eigen::IndexPair<int>, unsigned long=4> const , Eigen::TensorMap<Eigen::Tensor<float const , int=4, int=1, int>, int=16, Eigen::MakePointer> const > const > const , Eigen::GpuDevice>, int>(float, int=4)
+       1876                   dram_write_transactions          Device Memory Write Transactions         866       11666        2552
+    Kernel: void tensorflow::functor::RowReduceKernel<float const *, float*, cub::Max>(float const *, float*, int, int, cub::Max, std::iterator_traits<tensorflow::functor::RowReduceKernel<float const *, float*, cub::Max>>::value_type)
+       1876                   dram_write_transactions          Device Memory Write Transactions           0          28          11
+    Kernel: void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, int=3, int=1, int>, int=16, Eigen::MakePointer>, Eigen::TensorPaddingOp<Eigen::array<Eigen::IndexPair<int>, unsigned long=3> const , Eigen::TensorMap<Eigen::Tensor<float const , int=3, int=1, int>, int=16, Eigen::MakePointer> const > const > const , Eigen::GpuDevice>, int>(float, int=3)
+       1876                   dram_write_transactions          Device Memory Write Transactions       29739       84787       83886
+    Kernel: void tensorflow::functor::FillPhiloxRandomKernelLaunch<tensorflow::random::UniformDistribution<tensorflow::random::PhiloxRandom, float>>(tensorflow::random::PhiloxRandom, tensorflow::random::PhiloxRandomResultElementType*, __int64, tensorflow::functor::FillPhiloxRandomKernelLaunch<tensorflow::random::UniformDistribution<tensorflow::random::PhiloxRandom, float>>)
+         54                   dram_write_transactions          Device Memory Write Transactions        7509      322174       73949
+    Kernel: void fft2d_c2r_16x16<float, bool=0>(float*, float2*, int, int, int, int, int, int, int, int, int, int, float, float, int, float*, float*)
+         26                   dram_write_transactions          Device Memory Write Transactions          65       75177       19395
+    Kernel: cudnn_maxwell_gcgemm_64x32_nt_batched
+          3                   dram_write_transactions          Device Memory Write Transactions      565526     2247626     1316647
+    Kernel: cudnn_maxwell_cgemm_64x32_tn_batched
+          3                   dram_write_transactions          Device Memory Write Transactions       76852      296020      150393
+    Kernel: sgemm_32x32x32_NN
+       1876                   dram_write_transactions          Device Memory Write Transactions          84         424         268
+    Kernel: void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<__int64, int=1, int=1, long>, int=16, Eigen::MakePointer>, Eigen::TensorConversionOp<__int64, Eigen::TensorTupleReducerOp<Eigen::internal::ArgMaxTupleReducer<Eigen::Tuple<long, float>>, Eigen::array<long, unsigned long=1> const , Eigen::TensorMap<Eigen::Tensor<float const , int=2, int=1, long>, int=16, Eigen::MakePointer> const > const > const > const , Eigen::GpuDevice>, long>(__int64, int=1)
+       3752                   dram_write_transactions          Device Memory Write Transactions           0         116          22
+    Kernel: void tensorflow::functor::BlockReduceKernel<float*, float*, int=256, tensorflow::functor::Sum<float>>(float*, float*, int, float, std::iterator_traits<tensorflow::functor::BlockReduceKernel<float*, float*, int=256, tensorflow::functor::Sum<float>>>::value_type)
+       3752                   dram_write_transactions          Device Memory Write Transactions           0          12           3
+    Kernel: void scal_kernel<float2, float2, int=1, bool=1, int=6, int=4, int=4, int=4>(cublasTransposeParams<float2>, float2 const *, float2*, float2 const *)
+        144                   dram_write_transactions          Device Memory Write Transactions           0        1884          13
+    Kernel: void fft2d_r2c_32x32<float, bool=0, unsigned int=1, bool=1>(float2*, float const *, int, int, int, int, int, int, int, int, int, cudnn::reduced_divisor, bool, int2, int, int)
+         10                   dram_write_transactions          Device Memory Write Transactions       24148    35649833     9473363
+    Kernel: cudnn_maxwell_cgemm_64x64_nt_batched
+          4                   dram_write_transactions          Device Memory Write Transactions       37809      280298      133173
+======== Error: CUDA profiling error.
