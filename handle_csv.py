@@ -2,8 +2,8 @@ import sys
 import csv
 
 infile = sys.argv[1]
-outfile = sys.argv[2]
-
+outfile1 = sys.argv[2]
+outfile2 = sys.argv[3]
 
 def toNum(str):
     numeric = '0123456789-.'
@@ -21,9 +21,10 @@ def toNum(str):
     return float(number), unit
 
 
-with open(infile) as fin, open(outfile, mode='w', newline='') as fout:
+with open(infile) as fin, open(outfile1, mode='w', newline='') as fout1, open(outfile2, mode='w', newline='') as fout2:
     reader = csv.reader(fin)
-    writer = csv.writer(fout)
+    writer1 = csv.writer(fout1)
+    writer2 = csv.writer(fout2)
     for i in range(4):
         header_row = next(reader)
         print(header_row)
@@ -37,7 +38,7 @@ with open(infile) as fin, open(outfile, mode='w', newline='') as fout:
         lastrowstr = ','.join(lastrow)
         rowlist = rowlist[0].split()
         rowlist.insert(0, lastrowstr)
-
+        '''
         minN, minU = toNum(rowlist[7])
         maxN, maxU = toNum(rowlist[8])
         avgN, avgU = toNum(rowlist[9])
@@ -68,9 +69,12 @@ with open(infile) as fin, open(outfile, mode='w', newline='') as fout:
         if avgU == 'MB/s':
             avgN /= 1000
         rowlist[9] = str(avgN)
-
+        '''
         print(rowlist)
-        writer.writerow(rowlist)
+        if flag == 1:
+            writer1.writerow(rowlist)
+        if flag == 2:
+            writer2.writerow(rowlist)
         flag += 1
         if flag == 3:
             flag = 0
