@@ -18,7 +18,7 @@ def prepare_data_for_resnet50(data_to_transform):
     return data
 
 
-(xtrain, ytrain), (xtest, ytest) = tf.keras.datasets.mnist.load_data()
+(xtrain, ytrain), (xtest, ytest) = tf.keras.datasets.cifar10.load_data()
 x_test = prepare_data_for_resnet50(xtest)
 y_test = keras.utils.to_categorical(ytest, 10)
 x_train = prepare_data_for_resnet50(xtrain)
