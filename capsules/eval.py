@@ -80,8 +80,8 @@ def collect_results(sess, tensors, n_batches):
 
     print('Collecting: 0/{}'.format(n_batches), end='')
 
-    #run_options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE)
-    #run_metadata = tf.RunMetadata()
+    run_options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE)
+    run_metadata = tf.RunMetadata()
 
     for i in range(n_batches):
         print('\rCollecting: {}/{}'.format(i + 1, n_batches), end='')
@@ -90,12 +90,12 @@ def collect_results(sess, tensors, n_batches):
             print('')
             print('herehereherehere it starts')
             vals = sess.run(tensors)
-            #tl = timeline.Timeline(run_metadata.step_stats)
-            #ctf = tl.generate_chrome_trace_format()
-            #print('herehereherehere it ends')
-            #with open('timeline.json', 'w') as f:
-            #    f.write(ctf)
-            #print('')
+            tl = timeline.Timeline(run_metadata.step_stats)
+            ctf = tl.generate_chrome_trace_format()
+            print('herehereherehere it ends')
+            with open('timeline_mnist_1.json', 'w') as f:
+                f.write(ctf)
+            print('')
         else:
             vals = sess.run(tensors)
 

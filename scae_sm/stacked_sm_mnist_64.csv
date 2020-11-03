@@ -1,0 +1,3 @@
+==9134== NVPROF is profiling process 9134, command: python -m stacked_capsule_autoencoders.eval_mnist_model --snapshot=stacked_capsule_autoencoders/checkpoints/mnist/model.ckpt-300001 --batch_size=64 --canvas_size=40 --n_part_caps=40 --n_obj_caps=32 --colorize_templates=True --use_alpha_channel=True --post
+==9134== Warning: Profiling results might be incorrect with current version of nvcc compiler used to compile cuda app. Compile with nvcc compiler 9.0 or later version to get correct profiling results. Ignore this warning if code is already compiled with the recommended nvcc version 
+==9134== Error: Internal profiling error 4055:34.
