@@ -89,11 +89,11 @@ def collect_results(sess, tensors, n_batches):
         if i == 10:
             print('')
             print('herehereherehere it starts')
-            vals = sess.run(tensors)
+            vals = sess.run(tensors, options=run_options, run_metadata=run_metadata)
             tl = timeline.Timeline(run_metadata.step_stats)
             ctf = tl.generate_chrome_trace_format()
             print('herehereherehere it ends')
-            with open('timeline_mnist_1.json', 'w') as f:
+            with open('timeline_mnist_8.json', 'w') as f:
                 f.write(ctf)
             print('')
         else:
